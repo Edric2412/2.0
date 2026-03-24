@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Quote, Send, Download, Terminal, Cpu, Microscope } from 'lucide-react';
+import { Quote, Send, Download, Terminal, Cpu, Microscope, Mail, Phone } from 'lucide-react';
 import { NeuralPortrait } from '../components/NeuralPortrait';
 
 export function Home() {
@@ -19,7 +19,7 @@ export function Home() {
       <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-8 py-16 md:py-32 relative">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-32 relative">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Hero Content */}
           <div className="flex-1 space-y-8 z-10">
@@ -34,10 +34,10 @@ export function Home() {
                 <div className="h-px w-12 bg-outline/30"></div>
                 <span className="text-xs text-on-surface-variant tracking-widest uppercase font-medium">Core Systems Architecture</span>
               </div>
-              <h1 className="font-headline text-5xl md:text-7xl font-black text-on-surface leading-none tracking-tighter">
+              <h1 className="font-headline text-4xl sm:text-5xl md:text-7xl font-black text-on-surface leading-none tracking-tighter">
                 Edric Jeffrey <span className="text-transparent bg-clip-text amethyst-gradient">Sam</span>
               </h1>
-              <p className="font-headline text-xl md:text-2xl text-on-surface-variant font-medium max-w-2xl leading-relaxed">
+              <p className="font-headline text-lg sm:text-xl md:text-2xl text-on-surface-variant font-medium max-w-2xl leading-relaxed">
                 Architecting the next generation of <span className="text-on-surface">Large Language Models</span> and <span className="text-on-surface">RAG systems</span> with mechanical precision.
               </p>
             </motion.div>
@@ -46,7 +46,7 @@ export function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-surface-container-low/80 backdrop-blur-md border-l-4 border-primary p-8 max-w-2xl shadow-2xl relative"
+              className="bg-surface-container-low/80 backdrop-blur-md border-l-4 border-primary p-6 md:p-8 max-w-2xl shadow-2xl relative"
             >
               <div className="absolute top-0 right-0 p-2 opacity-10">
                 <Quote className="w-16 h-16" />
@@ -62,14 +62,14 @@ export function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4 pt-4"
             >
-              <button className="amethyst-gradient text-white px-10 py-5 rounded-xl font-headline font-black text-sm uppercase tracking-[0.2em] flex items-center gap-3 hover:shadow-[0_0_40px_rgba(123,44,191,0.4)] transition-all hover:-translate-y-1">
+              <a href="mailto:edricjeffrey07@gmail.com" className="amethyst-gradient text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-headline font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center gap-3 hover:shadow-[0_0_40px_rgba(123,44,191,0.4)] transition-all hover:-translate-y-1 w-full sm:w-auto justify-center">
                 Contact Me
-                <Send className="w-5 h-5" />
-              </button>
-              <button className="bg-surface-container border border-outline/30 text-on-surface px-10 py-5 rounded-xl font-headline font-black text-sm uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-surface-container-high transition-all">
+                <Send className="w-4 h-4 md:w-5 md:h-5" />
+              </a>
+              <a href="/resume.pdf" download="Edric_Jeffrey_Resume.pdf" className="bg-surface-container border border-outline/30 text-on-surface px-6 md:px-10 py-4 md:py-5 rounded-xl font-headline font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-surface-container-high transition-all w-full sm:w-auto justify-center">
                 Download Resume
-                <Download className="w-5 h-5" />
-              </button>
+                <Download className="w-4 h-4 md:w-5 md:h-5" />
+              </a>
             </motion.div>
 
             {/* Technical Badges */}
@@ -77,12 +77,20 @@ export function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="pt-8 flex items-center gap-4 opacity-70"
+              className="pt-8 flex flex-wrap items-center gap-4 opacity-70"
             >
               <div className="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg">
                 <Terminal className="w-4 h-4 text-primary" />
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface">Linux x86_64</span>
               </div>
+              <a href="mailto:edricjeffrey07@gmail.com" className="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg hover:border-primary/50 transition-colors">
+                <Mail className="w-4 h-4 text-primary" />
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface">edricjeffrey07@gmail.com</span>
+              </a>
+              <a href="tel:+917305528953" className="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg hover:border-primary/50 transition-colors">
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface">+91 7305528953</span>
+              </a>
             </motion.div>
           </div>
 
@@ -128,8 +136,8 @@ export function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="max-w-7xl mx-auto px-8 py-20 pb-32">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 pb-32">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
             { num: '02', label: 'Internships', sub: 'Industry Proven' },
             { num: '05', label: 'Projects', sub: 'Full-Stack AI' },
@@ -142,7 +150,7 @@ export function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-surface-container-low p-10 rounded-2xl border border-outline/10 group hover:border-primary/50 transition-all duration-500"
+              className="bg-surface-container-low p-6 md:p-10 rounded-2xl border border-outline/10 group hover:border-primary/50 transition-all duration-500"
             >
               <div className={`${stat.textClass || 'text-5xl'} font-headline font-black text-on-surface mb-3 group-hover:text-primary transition-colors`}>{stat.num}</div>
               <div className="text-[10px] font-bold tracking-[0.3em] text-on-surface-variant uppercase">{stat.label}</div>

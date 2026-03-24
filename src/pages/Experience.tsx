@@ -1,10 +1,10 @@
 import { motion } from 'motion/react';
-import { Briefcase, Scan, CheckSquare, Network, Settings, BarChart, PieChart, GraduationCap, Award, Calculator, Medal, Users } from 'lucide-react';
+import { Briefcase, Scan, CheckSquare, Network, Settings, BarChart, PieChart, GraduationCap, Award, Calculator, Medal, Users, Flame, HeartHandshake, Code } from 'lucide-react';
 
 export function Experience() {
   return (
     <main className="pl-0 md:pl-20 pt-24 pb-12 min-h-screen flex-1">
-      <div className="max-w-7xl mx-auto px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Header */}
         <header className="mb-20">
           <motion.h1 
@@ -182,33 +182,134 @@ export function Experience() {
         </div>
       </div>
 
-      {/* System Metrics & Research Area */}
-      <section className="bg-surface-container-lowest py-20 px-8 border-y border-outline-variant/20 mt-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative group">
-              <div className="absolute inset-0 bg-primary-container/20 blur-3xl rounded-full group-hover:bg-primary-container/30 transition-colors"></div>
-              <img alt="Neural Network Visualization" className="relative rounded-lg shadow-2xl border border-outline-variant/30 opacity-70 hover:opacity-100 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD7SD68QpM0gYB12xZ6r_WMlxpqnZHZ6dEvBJshc1f6ODIekvjfAC0qe0ahLmlg_lkUAQmUPVvEe3HiNc8cOVGzrzigUyed8_RLNXP8aH52HQG3I4pc5jhyp4Mohn0j5v3XFdmIdiG5MIVl2qI_ebTnAv1VC1DQ9vHjWgVimJVV-zYZeH-RLEo8AB2Z4D73FqXLy_JHKeZySdl2aL-c4kucfio3Ju5XsdGc_Tl41Kzo2x0USympQxP-tzBoDg3FbF7L6a_3lOU6Vw"/>
-            </div>
-            <div className="order-1 md:order-2 space-y-6">
-              <h2 className="font-headline text-4xl font-bold text-on-surface">System Metrics & Research</h2>
-              <p className="font-body leading-relaxed text-on-surface-variant">
-                Beyond industrial application, Edric maintains a steady focus on technical documentation and architectural performance metrics. His work bridges the gap between raw data and actionable AI modeling.
-              </p>
-              <div className="flex gap-4">
-                <div className="flex-1 p-6 bg-surface-container border-t-4 border-primary-container rounded-b-lg">
-                  <span className="text-4xl font-bold font-headline text-on-surface">14+</span>
-                  <span className="block text-[10px] text-primary uppercase tracking-widest mt-2 font-bold">Models Deployed</span>
+      {/* Leadership & Community Impact */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pb-12">
+        <section className="mt-8 lg:mt-12">
+          <div className="flex items-center gap-4 mb-10">
+            <Users className="text-primary w-8 h-8" />
+            <h2 className="font-headline text-3xl font-bold tracking-tight uppercase text-on-surface">Leadership & Community Impact</h2>
+          </div>
+
+          <div className="space-y-0 relative border-l border-outline-variant/30 ml-4">
+            {/* Brigade Lead */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-16 pl-10 relative transition-all duration-300 amethyst-glow-hover"
+            >
+              <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-surface-container border-2 border-primary-container shadow-[0_0_15px_var(--color-primary-container)]"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                <div>
+                  <h3 className="font-headline text-2xl font-bold text-on-surface">Brigade Lead — IGNITE 2025</h3>
+                  <p className="text-primary font-bold tracking-wide">KCLAS</p>
                 </div>
-                <div className="flex-1 p-6 bg-surface-container border-t-4 border-primary-container rounded-b-lg">
-                  <span className="text-4xl font-bold font-headline text-on-surface">98%</span>
-                  <span className="block text-[10px] text-primary uppercase tracking-widest mt-2 font-bold">Uptime SLA</span>
+                <div className="text-right mt-2 md:mt-0">
+                  <span className="text-xs font-mono bg-surface-container-high px-3 py-1 rounded-full text-on-surface uppercase tracking-widest border border-outline-variant/30">July 2025</span>
                 </div>
               </div>
-            </div>
+              <div className="bg-surface-container-lowest border-l-2 border-primary-container p-6 mt-4 rounded-r-lg">
+                <p className="font-body text-sm text-on-surface-variant mb-4 leading-relaxed">
+                  Selected as one of 16 Brigade Leads for IGNITE 2025, a two-week student induction programme at KCLAS. Mentored and guided a cross-departmental cohort of first-year students through structured activities in leadership, teamwork, value-based learning, and personal development.
+                </p>
+                <ul className="space-y-4 font-body leading-relaxed text-sm text-on-surface-variant">
+                  <li className="flex gap-3">
+                    <Flame className="text-primary w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Managed a brigade group through 14 days of collaborative exercises, discussions, and self-discovery sessions across multiple departments.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <Flame className="text-primary w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Facilitated group dynamics, resolved team conflicts, and delivered daily structured sessions with peer co-leads.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <Flame className="text-primary w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Recognised for communication, mentorship, and the ability to engage freshers from diverse academic backgrounds.</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* CSR Project Chair */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-16 pl-10 relative transition-all duration-300 amethyst-glow-hover"
+            >
+              <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-surface-container border-2 border-outline-variant/50"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                <div>
+                  <h3 className="font-headline text-2xl font-bold text-on-surface">CSR Project Chair</h3>
+                  <p className="text-primary/80 font-bold tracking-wide">Rotaract Club, KCLAS</p>
+                </div>
+                <div className="text-right mt-2 md:mt-0">
+                  <span className="text-xs font-mono bg-surface-container-high px-3 py-1 rounded-full text-on-surface uppercase tracking-widest border border-outline-variant/30">2024 – 2025</span>
+                </div>
+              </div>
+              <div className="bg-surface-container-low p-6 mt-4 rounded-r-lg border-l-2 border-outline-variant/30">
+                <p className="font-body text-sm text-on-surface-variant mb-4 leading-relaxed">
+                  Appointed as CSR Project Chair for the Rotaract Club of Kumaraguru College of Liberal Arts and Science, under Rotaract District 3201, for the 2024–2025 academic year.
+                </p>
+                <ul className="space-y-4 font-body leading-relaxed text-sm text-on-surface-variant">
+                  <li className="flex gap-3">
+                    <HeartHandshake className="text-outline w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Led the planning and execution of community service initiatives and social responsibility projects for the club's annual calendar.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <HeartHandshake className="text-outline w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Coordinated cross-departmental participation, volunteer mobilisation, and community outreach events.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <HeartHandshake className="text-outline w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Reported to the club's Faculty Advisor and oversaw impact tracking for CSR deliverables throughout the year.</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* AI/ML Project Developer */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-8 pl-10 relative transition-all duration-300 amethyst-glow-hover"
+            >
+              <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-surface-container border-2 border-outline-variant/50"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                <div>
+                  <h3 className="font-headline text-2xl font-bold text-on-surface">AI/ML Project Developer</h3>
+                  <p className="text-primary/80 font-bold tracking-wide">KCLAS</p>
+                </div>
+                <div className="text-right mt-2 md:mt-0">
+                  <span className="text-xs font-mono bg-surface-container-high px-3 py-1 rounded-full text-on-surface uppercase tracking-widest border border-outline-variant/30">2024 – 2026</span>
+                </div>
+              </div>
+              <div className="bg-surface-container-low p-6 mt-4 rounded-r-lg border-l-2 border-outline-variant/30">
+                <p className="font-body text-sm text-on-surface-variant mb-4 leading-relaxed">
+                  Designed and deployed three production-ready AI systems in an academic setting:
+                </p>
+                <ul className="space-y-4 font-body leading-relaxed text-sm text-on-surface-variant">
+                  <li className="flex gap-3">
+                    <Code className="text-outline w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Built an Automated Event Report Generator using Python + AI-assisted writing, reducing faculty reporting time by 90% across masterclasses, workshops, and field visits. Tool supports multi-device use and one-click DOCX export.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <Code className="text-outline w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Deployed a Confluence Seating Visualiser used institution-wide to manage 300+ student seating allocations in real time.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <Code className="text-outline w-4 h-4 mt-1 flex-shrink-0" />
+                    <span className="text-on-surface">Guided a team as Project Lead to create a Exam Seating Visualizer and a Exam Attendance Marking Platform, that also helps to create reports of attendance of classes and departments for the exams.</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }

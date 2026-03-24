@@ -7,6 +7,10 @@ export function Footer() {
         <div className="flex flex-col items-center md:items-start gap-3">
           <div className="text-on-surface font-bold font-headline uppercase tracking-tighter text-xl">Neural Architect</div>
           <p className="font-['Space_Grotesk'] text-[10px] text-primary-container tracking-[0.1em] uppercase">© 2024 Neural Architect. Built with Precision.</p>
+          <div className="flex flex-col items-center md:items-start gap-1 mt-2">
+            <a href="mailto:edricjeffrey07@gmail.com" className="font-['Space_Grotesk'] text-xs text-on-surface-variant hover:text-primary transition-colors tracking-widest">edricjeffrey07@gmail.com</a>
+            <a href="tel:+917305528953" className="font-['Space_Grotesk'] text-xs text-on-surface-variant hover:text-primary transition-colors tracking-widest">+91 7305528953</a>
+          </div>
         </div>
         <div className="flex gap-10 my-8 md:my-0">
           <a className="font-['Space_Grotesk'] text-[10px] text-on-surface hover:text-primary hover:translate-x-2 transition-all duration-500 tracking-widest uppercase" href="#">Privacy Policy</a>

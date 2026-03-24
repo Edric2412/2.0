@@ -3,7 +3,7 @@ import { BrainCircuit, ArrowRight, ExternalLink, Compass, FileText, Gauge, Hash,
 
 export function Projects() {
   return (
-    <main className="lg:pl-20 pt-32 pb-24 px-8 md:px-16 max-w-7xl mx-auto flex-1">
+    <main className="lg:pl-20 pt-32 pb-24 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto flex-1">
       {/* Hero Section Title */}
       <header className="mb-20">
         <motion.div 
@@ -63,9 +63,14 @@ export function Projects() {
                 <span key={tag} className="text-xs font-mono text-primary px-2 py-1 bg-surface-container-lowest border border-primary/20 font-bold">{tag}</span>
               ))}
             </div>
-            <a className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-4 transition-all hover:text-on-surface" href="#">
-              View Repository <ArrowRight className="w-5 h-5" />
-            </a>
+            <div className="flex gap-6">
+              <a className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface" href="https://github.com/Edric2412/LLM-QLoRA" target="_blank" rel="noreferrer">
+                GitHub <ArrowRight className="w-4 h-4" />
+              </a>
+              <a className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface" href="https://huggingface.co/Edric2412/Qwen3-8B-Hallucination-Detector-LoRA" target="_blank" rel="noreferrer">
+                HuggingFace <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </motion.div>
 
@@ -91,7 +96,10 @@ export function Projects() {
             </div>
             <div className="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant/30">
               <span className="text-[9px] font-mono text-on-surface-variant uppercase font-bold">Gemini • Neo4j • Docker</span>
-              <ExternalLink className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform group-hover:text-on-surface" />
+              <a href="https://github.com/Edric2412/Q-A" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
+                <span className="text-xs font-bold uppercase tracking-widest">GitHub</span>
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
         </motion.div>
@@ -116,11 +124,16 @@ export function Projects() {
               Multimodal GenAI platform (Gemini 3, TTS/STT) for Kaggle & DeepMind. Features hybrid architecture with tool calling and Google Search grounding for real-time gap analysis and asset generation (CVs, portfolios).
             </p>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
-              <div className="h-full amethyst-gradient w-full"></div>
+          <div className="mt-auto">
+            <a href="https://github.com/Edric2412/CareerCompass_AI" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface mb-4">
+              View on GitHub <ArrowRight className="w-4 h-4" />
+            </a>
+            <div className="flex items-center gap-2">
+              <div className="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
+                <div className="h-full amethyst-gradient w-full"></div>
+              </div>
+              <span className="text-[10px] text-primary font-mono whitespace-nowrap font-bold uppercase">Production Ready</span>
             </div>
-            <span className="text-[10px] text-primary font-mono whitespace-nowrap font-bold uppercase">Production Ready</span>
           </div>
         </motion.div>
 
@@ -140,9 +153,15 @@ export function Projects() {
           <p className="text-sm text-on-surface-variant mb-6 flex-grow font-medium">
             Developed for KCLAS. Reduced university event report creation time from 1 hour to 5 mins using FastAPI & DOCX automation.
           </p>
-          <div className="flex gap-2 mt-auto">
-            <FileText className="w-6 h-6 text-primary/70 hover:scale-110 transition-transform cursor-help" />
-            <Gauge className="w-6 h-6 text-primary hover:scale-110 transition-transform cursor-help" />
+          <div className="flex items-center justify-between mt-auto">
+            <div className="flex gap-2">
+              <FileText className="w-6 h-6 text-primary/70 hover:scale-110 transition-transform cursor-help" />
+              <Gauge className="w-6 h-6 text-primary hover:scale-110 transition-transform cursor-help" />
+            </div>
+            <a href="https://github.com/Edric2412/Automated-Report-Generator" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
+              <span className="text-xs font-bold uppercase tracking-widest">GitHub</span>
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </motion.div>
 
@@ -164,9 +183,15 @@ export function Projects() {
               </div>
               <p className="text-sm text-on-surface-variant font-medium">Real-time YOLO (93%) and Mediapipe/LSTM (97%) detection via WebSocket + FastAPI.</p>
             </div>
-            <div className="flex items-center gap-2 text-[10px] font-mono text-primary font-bold">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              97% STACKED LSTM ACCURACY
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-[10px] font-mono text-primary font-bold">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                97% STACKED LSTM ACCURACY
+              </div>
+              <a href="https://github.com/Edric2412/Realtime-Sign-Language-Detection-and-Translation-using-YOLO-" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
+                <span className="text-xs font-bold uppercase tracking-widest">GitHub</span>
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
         </motion.div>
@@ -193,19 +218,25 @@ export function Projects() {
             </div>
             <div className="flex-grow">
               <div className="flex flex-wrap items-center gap-3 mb-3">
-                <h4 className="font-headline text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">All-in-One RAG Assessment Engine: Dynamic Creation, Automated Evaluation, and University-Centric Output</h4>
+                <a href="https://ijirt.org/article?manuscript=191950" target="_blank" rel="noreferrer" className="font-headline text-2xl font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-2">
+                  All-in-One RAG Assessment Engine: Dynamic Creation, Automated Evaluation, and University-Centric Output
+                  <ExternalLink className="w-5 h-5 opacity-50" />
+                </a>
                 <span className="px-2 py-0.5 bg-surface text-primary text-[10px] font-mono rounded font-bold">JAN 2026</span>
               </div>
               <p className="text-on-surface-variant max-w-3xl leading-relaxed mb-6 font-medium">
                 Published in Volume 12, Issue 8. Investigates dynamic creation and automated evaluation workflows within university settings using advanced RAG architectures.
               </p>
-              <div className="flex items-center gap-6">
-                <a className="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline flex items-center gap-2" href="#">
+              <div className="flex flex-wrap items-center gap-6">
+                <a className="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline flex items-center gap-2" href="https://ijirt.org/article?manuscript=191950" target="_blank" rel="noreferrer">
+                  <ExternalLink className="w-4 h-4" /> Read Paper
+                </a>
+                <span className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-2">
                   <FileText className="w-4 h-4" /> Vol 12, Issue 8
-                </a>
-                <a className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold hover:text-on-surface flex items-center gap-2" href="#">
+                </span>
+                <span className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-2">
                   <Hash className="w-4 h-4" /> Page: 8308-8314
-                </a>
+                </span>
               </div>
             </div>
           </motion.div>
@@ -224,19 +255,25 @@ export function Projects() {
             </div>
             <div className="flex-grow">
               <div className="flex flex-wrap items-center gap-3 mb-3">
-                <h4 className="font-headline text-2xl font-bold text-on-surface group-hover:text-primary transition-colors">Emerging Trends & Analytical Perspectives in the Development of New Smartphones</h4>
+                <a href="https://ieeexplore.ieee.org/document/11012174" target="_blank" rel="noreferrer" className="font-headline text-2xl font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-2">
+                  Emerging Trends & Analytical Perspectives in the Development of New Smartphones
+                  <ExternalLink className="w-5 h-5 opacity-50" />
+                </a>
                 <span className="px-2 py-0.5 bg-surface text-primary text-[10px] font-mono rounded font-bold">2025</span>
               </div>
               <p className="text-on-surface-variant max-w-3xl leading-relaxed mb-6 font-medium">
                 Scopus Indexed. Presented at the 3rd International Conference on Advancements in Electrical, Electronics, Communication, Computing and Automation (ICAECA).
               </p>
-              <div className="flex items-center gap-6">
-                <a className="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline flex items-center gap-2" href="#">
+              <div className="flex flex-wrap items-center gap-6">
+                <a className="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline flex items-center gap-2" href="https://ieeexplore.ieee.org/document/11012174" target="_blank" rel="noreferrer">
+                  <ExternalLink className="w-4 h-4" /> Read Paper
+                </a>
+                <span className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-2">
                   <CheckCircle className="w-4 h-4" /> Scopus Indexed
-                </a>
-                <a className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold hover:text-on-surface flex items-center gap-2" href="#">
+                </span>
+                <span className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-2">
                   <GraduationCap className="w-4 h-4" /> ICAECA 2025
-                </a>
+                </span>
               </div>
             </div>
           </motion.div>
