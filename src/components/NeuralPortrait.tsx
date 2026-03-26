@@ -119,7 +119,7 @@ export function NeuralPortrait() {
   const scrollProgressRef = useRef(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [imageUrl, setImageUrl] = useState(DEFAULT_IMAGE);
+  const imageUrl = DEFAULT_IMAGE;
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -662,7 +662,6 @@ export function NeuralPortrait() {
     };
 
     const img = new Image();
-    img.crossOrigin = "Anonymous";
     img.onload = () => {
       try {
         const imagePoints = processImage(img);
@@ -676,7 +675,8 @@ export function NeuralPortrait() {
       }
     };
     img.onerror = () => {
-      setError("Failed to load image. Please select it manually.");
+      console.error("Failed to load image from", imageUrl);
+      setError("Failed to load neural image.");
     };
     img.src = imageUrl;
 
@@ -687,15 +687,6 @@ export function NeuralPortrait() {
     };
   }, [imageUrl]);
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setError(null);
-      setIsLoaded(false);
-      setImageUrl(URL.createObjectURL(file));
-    }
-  };
-
   return (
     <div 
       ref={containerRef} 
@@ -705,10 +696,6 @@ export function NeuralPortrait() {
         {error && (
           <div className="absolute inset-0 flex flex-col items-center justify-center text-red-400 font-mono text-sm z-50 bg-black/50 backdrop-blur-sm">
             <p className="mb-4">{error}</p>
-            <label className="cursor-pointer px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition-colors">
-              Select Image
-              <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
-            </label>
           </div>
         )}
         

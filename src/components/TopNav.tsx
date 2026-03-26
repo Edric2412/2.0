@@ -21,8 +21,7 @@ export function TopNav() {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-2xl border-b border-outline/10">
       <div className="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-full mx-auto">
         <div className="flex items-center gap-3">
-          <span className="text-xl md:text-2xl font-bold tracking-tighter text-on-surface font-headline uppercase truncate">Edric Jeffrey</span>
-          <span className="hidden md:inline-block px-2 py-0.5 text-[10px] bg-primary/20 text-primary border border-primary/30 rounded-sm font-bold tracking-widest">STABLE v2.0.4</span>
+          <span className="text-xl md:text-2xl font-bold tracking-tighter text-on-surface font-headline uppercase truncate">Edric Jeffrey Sam</span>
         </div>
         
         {/* Desktop Navigation */}
