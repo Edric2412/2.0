@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
-import neuralImage from '../assets/neuralimage.png';
+import neuralImage from '/public/neuralimage.png';
 
 // --- CONFIGURATION ---
 const DEFAULT_IMAGE = neuralImage;
