@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
+import neuralImage from '../assets/neuralimage.png';
 
 // --- CONFIGURATION ---
-const DEFAULT_IMAGE = '/neuralimage.png';
+const DEFAULT_IMAGE = neuralImage;
 const MORPH_TEXT = 'EJS';
 
 const THEME_CONFIG = {

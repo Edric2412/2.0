@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Quote, Send, Download, Terminal, Cpu, Microscope, Mail, Phone } from 'lucide-react';
 import { NeuralPortrait } from '../components/NeuralPortrait';
+import resumePdf from '../assets/resume.pdf';
 
 export function Home() {
   return (
@@ -66,7 +67,7 @@ export function Home() {
                 Contact Me
                 <Send className="w-4 h-4 md:w-5 md:h-5" />
               </a>
-              <a href="/resume.pdf" download="Edric_Jeffrey_Resume.pdf" className="bg-surface-container border border-outline/30 text-on-surface px-6 md:px-10 py-4 md:py-5 rounded-xl font-headline font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-surface-container-high transition-all w-full sm:w-auto justify-center">
+              <a href={resumePdf} download="Edric_Jeffrey_Resume.pdf" className="bg-surface-container border border-outline/30 text-on-surface px-6 md:px-10 py-4 md:py-5 rounded-xl font-headline font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center gap-3 hover:bg-surface-container-high transition-all w-full sm:w-auto justify-center">
                 Download Resume
                 <Download className="w-4 h-4 md:w-5 md:h-5" />
               </a>
