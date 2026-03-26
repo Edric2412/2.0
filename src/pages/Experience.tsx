@@ -153,8 +153,7 @@ export function Experience() {
               <div className="space-y-4">
                 {[
                   { icon: Calculator, title: 'Perfect Score in Inferential Statistics', sub: 'Academic Excellence' },
-                  { icon: Medal, title: 'Mahatma Gandhi Merit Scholarship', sub: 'Merit-Based Honor' },
-                  { icon: Users, title: 'CSR Project Chair', sub: 'Rotaract Club of KCLAS' }
+                  { icon: Medal, title: 'Mahatma Gandhi Merit Scholarship', sub: 'Merit-Based Honor' }
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
