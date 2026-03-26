@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Quote, Send, Download, Terminal, Cpu, Microscope, Mail, Phone } from 'lucide-react';
 import { NeuralPortrait } from '../components/NeuralPortrait';
-import resumePdf from '../assets/resume.pdf';
+import resumePdf from '../assets/resume.pdf?url';
 
 export function Home() {
   return (
