@@ -3,7 +3,7 @@ import { BrainCircuit, ArrowRight, ExternalLink, Compass, FileText, Gauge, Hash,
 
 export function Projects() {
   return (
-    <main className="lg:pl-20 pt-32 pb-24 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto flex-1">
+    <main className="pt-32 pb-24 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto flex-1">
       {/* Hero Section Title */}
       <header className="mb-20">
         <motion.div 
@@ -83,7 +83,7 @@ export function Projects() {
           className="md:col-span-12 lg:col-span-4 group relative overflow-hidden bg-surface-container rounded-lg flex flex-col hover:-translate-y-1 transition-all duration-300 amethyst-glow border border-outline-variant/30"
         >
           <div className="h-40 overflow-hidden relative">
-            <img alt="RAG Dashboard" className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500 scale-110 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdsDFE-uGa_EJ11LhCCP8YuutXZXBFxuiwPuyEoaBpdjWoR-rITqK1uUlvgzXwh61JywmQhje52ROIJSz6fVkcumKi036v8vXUrTmkrQ19rY4Wj4eLDv9RQxwih_Ori52yLxMJ1MuxafqhtYJSb2ov_RmRU-O-R2uHNRZUlY5SQdcKYtuIq4ktxTdqKFj3Fd7MTaFVt0OyskBhRJjQSDnNRHovIQNlabFM9R0_25H4VDdbOBXDpzjEVjt0jwbymdbFL7Tts4B-QoQ"/>
+            <img loading="lazy" decoding="async" alt="RAG Dashboard" className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500 scale-110 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdsDFE-uGa_EJ11LhCCP8YuutXZXBFxuiwPuyEoaBpdjWoR-rITqK1uUlvgzXwh61JywmQhje52ROIJSz6fVkcumKi036v8vXUrTmkrQ19rY4Wj4eLDv9RQxwih_Ori52yLxMJ1MuxafqhtYJSb2ov_RmRU-O-R2uHNRZUlY5SQdcKYtuIq4ktxTdqKFj3Fd7MTaFVt0OyskBhRJjQSDnNRHovIQNlabFM9R0_25H4VDdbOBXDpzjEVjt0jwbymdbFL7Tts4B-QoQ"/>
             <div className="absolute top-4 right-4 px-2 py-1 bg-primary text-on-primary text-[8px] font-bold uppercase tracking-widest rounded-sm">Award Winner</div>
           </div>
           <div className="p-6 flex-grow flex flex-col">
@@ -168,7 +168,7 @@ export function Projects() {
           className="md:col-span-12 lg:col-span-4 group relative overflow-hidden bg-surface-container rounded-lg hover:-translate-y-1 transition-all duration-300 amethyst-glow border border-outline-variant/30"
         >
           <div className="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-90 z-10"></div>
-          <img alt="Sign Language Project" className="absolute inset-0 w-full h-full object-cover grayscale brightness-50 opacity-30 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfV5Lsy_naNWUSUN0Ok9gsypqUIb6WzqiMELt1j04rLJaxAoEjmIZhYFmqEm7Yx__cJGxX4C7FSonqB0Fno1nfifG-DrGRDi0sIdfX59qC4XR3mLas15s7T396lU-7aqgngSFrOfR7IoXEBg5BPYTglEme7E8I7vO6WIHgwi24zcS3a7TKmstJDh8eoKdKnBPiiFC8jnQ5BlSf27juLRha_Ga8twjkRpCX9dd2JZ58vdo_gKY4YhMkcKT_9LO-J_g3zbzu2D7dD20"/>
+          <img loading="lazy" decoding="async" alt="Sign Language Project" className="absolute inset-0 w-full h-full object-cover grayscale brightness-50 opacity-30 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfV5Lsy_naNWUSUN0Ok9gsypqUIb6WzqiMELt1j04rLJaxAoEjmIZhYFmqEm7Yx__cJGxX4C7FSonqB0Fno1nfifG-DrGRDi0sIdfX59qC4XR3mLas15s7T396lU-7aqgngSFrOfR7IoXEBg5BPYTglEme7E8I7vO6WIHgwi24zcS3a7TKmstJDh8eoKdKnBPiiFC8jnQ5BlSf27juLRha_Ga8twjkRpCX9dd2JZ58vdo_gKY4YhMkcKT_9LO-J_g3zbzu2D7dD20"/>
           <div className="relative z-20 p-6 flex flex-col h-full justify-between min-h-[220px]">
             <div>
               <div className="flex justify-between items-start mb-2">

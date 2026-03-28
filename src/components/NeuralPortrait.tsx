@@ -139,6 +139,24 @@ export function NeuralPortrait() {
     let bgGradient: CanvasGradient | null = null;
     let sinCache: number[] = [];
     let cosCache: number[] = [];
+    
+    // --- VIEWPORT OPTIMIZATION ENGINE ---
+    let isVisible = true;
+    let observer: IntersectionObserver | null = null;
+    if (containerRef.current) {
+      observer = new IntersectionObserver((entries) => {
+        const wasVisible = isVisible;
+        isVisible = entries[0].isIntersecting;
+        
+        // If it just became visible again and is loaded, explicitly kickstart the engine
+        if (!wasVisible && isVisible && nodes.length > 0) {
+          lastFrameTime = performance.now();
+          animationFrameId = requestAnimationFrame(render);
+        }
+      }, { rootMargin: '100px', threshold: 0 }); // Pre-load slightly before scrolling in
+      
+      observer.observe(containerRef.current);
+    }
 
     // --- SETUP & RESIZE ---
     const resizeCanvas = () => {
@@ -458,6 +476,12 @@ export function NeuralPortrait() {
     let frameCount = 0;
 
     const render = (time: number) => {
+      // MASSIVE GPU OPTIMIZATION: If strictly off-screen, completely pause math/drawing!
+      if (!isVisible) {
+        cancelAnimationFrame(animationFrameId);
+        return; 
+      }
+
       if (time - lastFrameTime < 16) {
         animationFrameId = requestAnimationFrame(render);
         return;
@@ -685,6 +709,7 @@ export function NeuralPortrait() {
       window.removeEventListener('resize', resizeCanvas);
       window.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(animationFrameId);
+      if (observer) observer.disconnect();
     };
   }, [imageUrl]);
 

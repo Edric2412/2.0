@@ -2,7 +2,7 @@ import { Terminal } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-surface w-full border-t border-outline-variant/15 pl-0 md:pl-20">
+    <footer className="bg-surface w-full border-t border-outline-variant/15">
       <div className="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full max-w-7xl mx-auto">
         <div className="flex flex-col items-center md:items-start gap-3">
           <div className="text-on-surface font-bold font-headline uppercase tracking-tighter text-xl">Neural Architect</div>

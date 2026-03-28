@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
-import { Menu, X, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function TopNav() {
@@ -18,7 +18,8 @@ export function TopNav() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-2xl border-b border-outline/10">
+    <>
+      <nav className={`fixed top-0 w-full z-50 transition-colors duration-300 ${isMobileMenuOpen ? 'bg-transparent border-transparent' : 'bg-background/40 backdrop-blur-2xl shadow-sm border-white/10 dark:border-white/5'} border-b`}>
       <div className="flex justify-between items-center w-full px-4 md:px-8 py-4 max-w-full mx-auto">
         <div className="flex items-center gap-3">
           <span className="text-xl md:text-2xl font-bold tracking-tighter text-on-surface font-headline uppercase truncate">Edric Jeffrey Sam</span>
@@ -38,8 +39,21 @@ export function TopNav() {
         </div>
 
         <div className="flex items-center gap-2 md:gap-6">
+          {/* Desktop Socials */}
+          <div className="hidden lg:flex items-center gap-4 border-r border-outline/20 pr-6 mr-1">
+            <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://github.com/Edric2412" target="_blank" rel="noreferrer" title="GitHub">
+              <Github className="w-5 h-5" />
+            </a>
+            <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://www.linkedin.com/in/edric-jeffrey-sam-52502927b/" target="_blank" rel="noreferrer" title="LinkedIn">
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://huggingface.co/Edric2412" target="_blank" rel="noreferrer" title="Hugging Face">
+              <Bot className="w-5 h-5" />
+            </a>
+          </div>
+
           <ThemeToggle />
-          <a href="mailto:edricjeffrey07@gmail.com" className="hidden sm:block amethyst-gradient text-white px-6 md:px-8 py-2 md:py-2.5 rounded-lg font-headline font-bold text-xs md:text-sm scale-95 hover:scale-100 active:scale-90 transition-all uppercase tracking-wider shadow-lg shadow-primary/20">
+          <a href="mailto:edricjeffrey07@gmail.com" className="hidden sm:block amethyst-gradient text-white px-6 md:px-8 py-2 md:py-2.5 rounded-lg font-headline font-bold text-xs md:text-sm scale-95 hover:scale-100 active:scale-90 transition-all uppercase tracking-wider shadow-[0_0_20px_rgba(157,78,221,0.3)]">
             Contact
           </a>
           
@@ -52,16 +66,17 @@ export function TopNav() {
           </button>
         </div>
       </div>
+      </nav>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu Overlay at z-40 so it sits behind the TopNav but above the page */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="lg:hidden absolute top-full left-0 w-full h-screen bg-background/60 backdrop-blur-3xl border-t border-outline/10 shadow-2xl flex flex-col py-6 px-6 gap-2 overflow-y-auto pb-32"
+            className="lg:hidden fixed inset-0 z-40 w-full h-screen bg-background/60 backdrop-blur-3xl shadow-2xl flex flex-col pt-24 px-6 gap-2 overflow-y-auto pb-32"
           >
             {navLinks.map((link) => (
             <Link 
@@ -89,16 +104,13 @@ export function TopNav() {
             <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface rounded-full transition-colors" href="https://www.linkedin.com/in/edric-jeffrey-sam-52502927b/" target="_blank" rel="noreferrer" title="LinkedIn">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface rounded-full transition-colors" href="https://huggingface.co/Edric2412" target="_blank" rel="noreferrer" title="Hugging Face">
-              <svg className="w-6 h-6" viewBox="0 0 64 64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M32.015 63.945c-17.636 0-31.933-14.297-31.933-31.933S14.379.079 32.015.079c17.636 0 31.933 14.297 31.933 31.933S49.651 63.945 32.015 63.945zm0-60.672c-15.867 0-28.739 12.872-28.739 28.739 0 15.867 12.872 28.739 28.739 28.739 15.867 0 28.739-12.872 28.739-28.739 0-15.867-12.872-28.739-28.739-28.739z" />
-                <path d="M43.076 25.131c-1.378 0-2.495-1.117-2.495-2.495 0-1.378 1.117-2.495 2.495-2.495 1.378 0 2.495 1.117 2.495 2.495 0 1.378-1.117 2.495-2.495 2.495zm-22.122 0c-1.378 0-2.495-1.117-2.495-2.495 0-1.378 1.117-2.495 2.495-2.495 1.378 0 2.495 1.117 2.495 2.495 0 1.378-1.117 2.495-2.495 2.495zm11.061 22.122c-8.274 0-15.004-6.73-15.004-15.004h3.194c0 6.513 5.297 11.81 11.81 11.81s11.81-5.297 11.81-11.81h3.194c0 8.274-6.73 15.004-15.004 15.004z" />
-              </svg>
+            <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface hover:scale-110 rounded-full transition-all" href="https://huggingface.co/Edric2412" target="_blank" rel="noreferrer" title="Hugging Face">
+              <Bot className="w-6 h-6" />
             </a>
           </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 }

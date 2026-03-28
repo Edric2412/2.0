@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
-import { Briefcase, Scan, CheckSquare, Network, Settings, BarChart, PieChart, GraduationCap, Award, Calculator, Medal, Users, Flame, HeartHandshake, Code } from 'lucide-react';
+import { Briefcase, Scan, CheckSquare, Network, Settings, BarChart, PieChart, GraduationCap, Award, Calculator, Medal, Users, Flame, HeartHandshake, Code, ExternalLink } from 'lucide-react';
 
 export function Experience() {
   return (
-    <main className="pl-0 md:pl-20 pt-24 pb-12 min-h-screen flex-1">
+    <main className="pt-24 pb-12 min-h-screen flex-1">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Header */}
         <header className="mb-20">
@@ -152,29 +152,60 @@ export function Experience() {
               </div>
               <div className="space-y-4">
                 {[
-                  { icon: Award, title: 'Best Student Innovation — Achievers Awards 2026', sub: 'Innovation Excellence' },
-                  { icon: Medal, title: 'Outstanding Project Performance — Project Expo \'26', sub: '1st Prize for Best Final Year Project' },
-                  { icon: Calculator, title: 'Perfect Score in Inferential Statistics', sub: 'Academic Excellence' },
-                  { icon: Medal, title: 'Mahatma Gandhi Merit Scholarship', sub: 'Merit-Based Honor' }
+                  { 
+                    icon: Award, 
+                    title: 'Best Student Innovation — Achievers Awards 2026', 
+                    sub: 'Innovation Excellence',
+                    link: 'https://www.linkedin.com/posts/edric-jeffrey-sam-52502927b_still-taking-this-in-im-truly-honored-ugcPost-7443722607738327040-32V0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQrUa0B7xWqaVlcbuJ9b4xfjYO_GYg9y6U'
+                  },
+                  { 
+                    icon: Medal, 
+                    title: 'Outstanding Project Performance — Project Expo \'26', 
+                    sub: '1st Prize for Best Final Year Project',
+                    link: 'https://www.linkedin.com/posts/edric-jeffrey-sam-52502927b_really-happy-to-share-that-i-won-first-prize-ugcPost-7432475284685221888-Sxi4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQrUa0B7xWqaVlcbuJ9b4xfjYO_GYg9y6U'
+                  },
+                  { 
+                    icon: Calculator, 
+                    title: 'Perfect Score in Inferential Statistics', 
+                    sub: 'Academic Excellence' 
+                  },
+                  { 
+                    icon: Medal, 
+                    title: 'Mahatma Gandhi Merit Scholarship', 
+                    sub: 'Merit-Based Honor',
+                    link: 'https://www.linkedin.com/posts/edric-jeffrey-sam-52502927b_academics-scholarship-professionaldevelopment-activity-7309235200754950144-c5S6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQrUa0B7xWqaVlcbuJ9b4xfjYO_GYg9y6U'
+                  }
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
-                    <motion.div 
+                    <motion.a 
                       key={i}
+                      href={item.link || '#'}
+                      target={item.link ? "_blank" : undefined}
+                      rel={item.link ? "noreferrer" : undefined}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: i * 0.1 }}
-                      className="flex items-center gap-6 p-5 bg-surface-container-low hover:bg-surface-container transition-all border-r-2 border-transparent hover:border-primary group rounded-l-lg"
+                      className={`flex items-center gap-6 p-5 bg-surface-container-low transition-all border-r-2 group rounded-l-lg ${
+                        item.link 
+                          ? 'border-transparent hover:border-primary hover:bg-surface-container cursor-pointer' 
+                          : 'border-transparent cursor-default'
+                      }`}
                     >
                       <div className="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-primary group-hover:scale-110 transition-transform">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h4 className="font-headline font-bold text-on-surface">{item.title}</h4>
                         <p className="text-xs text-outline uppercase tracking-tighter">{item.sub}</p>
                       </div>
-                    </motion.div>
+                      {item.link && (
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity pr-2">
+                          <ExternalLink className="w-4 h-4 text-primary" />
+                        </div>
+                      )}
+                    </motion.a>
                   );
                 })}
               </div>

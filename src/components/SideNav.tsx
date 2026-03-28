@@ -2,7 +2,7 @@ import { Github, Linkedin } from 'lucide-react';
 
 export function SideNav() {
   return (
-    <aside className="fixed left-0 top-0 h-full w-20 lg:w-20 z-40 bg-surface-container-low shadow-[0_0_30px_rgba(199,125,255,0.1)] hidden md:flex flex-col items-center py-10 pt-28">
+    <aside className="fixed left-0 top-0 h-full w-20 z-40 bg-surface-container-low shadow-[0_0_30px_rgba(199,125,255,0.1)] hidden lg:flex flex-col items-center py-10 pt-28">
       <div className="mb-12 flex flex-col items-center">
       </div>
       <div className="flex flex-col items-center space-y-8 flex-1">
