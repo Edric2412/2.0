@@ -152,6 +152,8 @@ export function Experience() {
               </div>
               <div className="space-y-4">
                 {[
+                  { icon: Award, title: 'Best Student Innovation — Achievers Awards 2026', sub: 'Innovation Excellence' },
+                  { icon: Medal, title: 'Outstanding Project Performance — Project Expo \'26', sub: '1st Prize for Best Final Year Project' },
                   { icon: Calculator, title: 'Perfect Score in Inferential Statistics', sub: 'Academic Excellence' },
                   { icon: Medal, title: 'Mahatma Gandhi Merit Scholarship', sub: 'Merit-Based Honor' }
                 ].map((item, i) => {

@@ -24,7 +24,7 @@ export function Home() {
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Hero Content */}
           <div className="flex-1 space-y-8 z-10">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -43,7 +43,7 @@ export function Home() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -57,7 +57,7 @@ export function Home() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -74,7 +74,7 @@ export function Home() {
             </motion.div>
 
             {/* Technical Badges */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -96,7 +96,7 @@ export function Home() {
           </div>
 
           {/* Hero Portrait Visual */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -138,14 +138,15 @@ export function Home() {
 
       {/* Stats Section */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 pb-32">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {[
             { num: '02', label: 'Internships', sub: 'Industry Proven' },
             { num: '05', label: 'Projects', sub: 'Full-Stack AI' },
             { num: '02', label: 'Publications', sub: 'IEEE/CVPR Core' },
-            { num: 'BEST FYP', label: 'Academic Excellence', sub: 'Award Winner', textClass: 'text-3xl leading-tight' }
+            { num: 'BEST FYP', label: 'Academic Excellence', sub: 'Award Winner', textClass: 'text-3xl leading-tight' },
+            { num: 'ACHIEVER', label: 'Best Student Innovation Award ', sub: 'Achievers Award \'26', textClass: 'text-2xl leading-tight' }
           ].map((stat, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

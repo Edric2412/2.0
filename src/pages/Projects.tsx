@@ -125,15 +125,9 @@ export function Projects() {
             </p>
           </div>
           <div className="mt-auto">
-            <a href="https://github.com/Edric2412/CareerCompass_AI" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface mb-4">
+            <a href="https://github.com/Edric2412/CareerCompass_AI" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface">
               View on GitHub <ArrowRight className="w-4 h-4" />
             </a>
-            <div className="flex items-center gap-2">
-              <div className="h-1 w-full bg-surface-container-low rounded-full overflow-hidden">
-                <div className="h-full amethyst-gradient w-full"></div>
-              </div>
-              <span className="text-[10px] text-primary font-mono whitespace-nowrap font-bold uppercase">Production Ready</span>
-            </div>
           </div>
         </motion.div>
 
