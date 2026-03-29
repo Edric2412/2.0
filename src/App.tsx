@@ -12,6 +12,7 @@ const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })))
 const Experience = lazy(() => import('./pages/Experience').then(m => ({ default: m.Experience })));
 const TechStack = lazy(() => import('./pages/TechStack').then(m => ({ default: m.TechStack })));
 const Projects = lazy(() => import('./pages/Projects').then(m => ({ default: m.Projects })));
+const Honors = lazy(() => import('./pages/Honors').then(m => ({ default: m.Honors })));
 import { ThemeProvider } from './components/ThemeProvider';
 import { MeshBackground } from './components/ui/mesh-background';
 
@@ -30,6 +31,7 @@ export default function App() {
                     <Route path="/experience" element={<Experience />} />
                     <Route path="/tech-stack" element={<TechStack />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/honors" element={<Honors />} />
                   </Routes>
                 </Suspense>
               </Layout>
