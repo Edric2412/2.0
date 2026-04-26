@@ -3,7 +3,7 @@ import { Briefcase, Scan, CheckSquare, Network, Settings, BarChart, PieChart, Gr
 
 export function Experience() {
   return (
-    <main className="pt-24 pb-12 min-h-screen flex-1">
+    <section id="experience" className="pt-24 pb-12 min-h-screen flex-1">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Header */}
         <header className="mb-20">
@@ -342,6 +342,6 @@ export function Experience() {
           </div>
         </section>
       </div>
-    </main>
+    </section>
   );
 }

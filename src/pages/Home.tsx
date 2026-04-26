@@ -5,7 +5,7 @@ import resumePdf from '../assets/resume.pdf?url';
 
 export function Home() {
   return (
-    <main className="min-h-screen pt-20 grid-bg relative overflow-hidden flex-1">
+    <section id="home" className="min-h-screen pt-20 relative overflow-hidden flex-1">
       {/* Animated Amethyst Circuit Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
         <div className="absolute bg-gradient-to-r from-transparent via-primary to-transparent h-px w-[250px] animate-[flow_12s_linear_infinite]" style={{ top: '15%', left: '5%', animationDelay: '0s' }}></div>
@@ -164,6 +164,6 @@ export function Home() {
           ))}
         </div>
       </section>
-    </main>
+    </section>
   );
 }

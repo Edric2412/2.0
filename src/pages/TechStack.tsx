@@ -3,7 +3,7 @@ import { Brain, Bot, Terminal, GitBranch, Layers, Blocks, Database, Network, Clo
 
 export function TechStack() {
   return (
-    <main className="pt-32 pb-20 px-4 md:px-12 lg:px-24 grid-bg min-h-screen flex-1">
+    <section id="tech-stack" className="pt-32 pb-20 px-4 md:px-12 lg:px-24 min-h-screen flex-1">
       {/* Hero Header */}
       <header className="mb-20 max-w-4xl">
         <motion.div 
@@ -290,6 +290,6 @@ export function TechStack() {
           </div>
         </div>
       </motion.section>
-    </main>
+    </section>
   );
 }

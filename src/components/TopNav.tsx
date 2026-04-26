@@ -1,22 +1,50 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import { Menu, X, Github, Linkedin, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function TopNav() {
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const isActive = (path: string) => location.pathname === path;
-
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/experience', label: 'Experience & Education' },
-    { path: '/tech-stack', label: 'Tech Stack' },
-    { path: '/projects', label: 'Projects & Research' },
-    { path: '/honors', label: 'Honors & Certifications' }
+    { id: 'home', label: 'Home' },
+    { id: 'experience', label: 'Experience & Education' },
+    { id: 'tech-stack', label: 'Tech Stack' },
+    { id: 'projects', label: 'Projects & Research' },
+    { id: 'honors', label: 'Honors & Certifications' }
   ];
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, options);
+
+    navLinks.forEach((link) => {
+      const element = document.getElementById(link.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLinkClick = (id: string) => {
+    setIsMobileMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -29,13 +57,13 @@ export function TopNav() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8 xl:space-x-10">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`font-['Space_Grotesk'] text-xs xl:text-sm tracking-widest uppercase transition-colors duration-300 ${isActive(link.path) ? 'text-on-surface font-bold border-b-2 border-primary pb-1' : 'text-primary hover:text-on-surface'}`}
+              <button
+                key={link.id}
+                onClick={() => handleLinkClick(link.id)}
+                className={`font-['Space_Grotesk'] text-xs xl:text-sm tracking-widest uppercase transition-colors duration-300 cursor-pointer ${activeSection === link.id ? 'text-on-surface font-bold border-b-2 border-primary pb-1' : 'text-primary hover:text-on-surface'}`}
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -80,14 +108,13 @@ export function TopNav() {
             className="lg:hidden fixed inset-0 z-40 w-full h-screen bg-background/60 backdrop-blur-3xl shadow-2xl flex flex-col pt-24 px-6 gap-2 overflow-y-auto pb-32"
           >
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`font-['Space_Grotesk'] text-base tracking-widest uppercase py-4 transition-colors duration-300 ${isActive(link.path) ? 'text-on-surface font-bold border-l-4 border-primary pl-4 bg-surface-container-low/50' : 'text-primary hover:text-on-surface pl-4'}`}
+              <button
+                key={link.id}
+                onClick={() => handleLinkClick(link.id)}
+                className={`font-['Space_Grotesk'] text-left text-base tracking-widest uppercase py-4 transition-colors duration-300 cursor-pointer ${activeSection === link.id ? 'text-on-surface font-bold border-l-4 border-primary pl-4 bg-surface-container-low/50' : 'text-primary hover:text-on-surface pl-4'}`}
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
             <a
               href="mailto:edricjeffrey07@gmail.com"
