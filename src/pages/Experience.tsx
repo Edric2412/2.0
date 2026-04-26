@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Briefcase, Scan, CheckSquare, Network, Settings, BarChart, PieChart, GraduationCap, Award, Calculator, Medal, Users, Flame, HeartHandshake, Code, ExternalLink } from 'lucide-react';
+import { Briefcase, Scan, CheckSquare, Network, Settings, BarChart, PieChart, GraduationCap, Users, Flame, HeartHandshake, Code } from 'lucide-react';
 
 export function Experience() {
   return (
@@ -110,7 +110,7 @@ export function Experience() {
             </div>
           </section>
 
-          {/* Right Column: Education & Achievements */}
+          {/* Right Column: Education */}
           <section className="lg:col-span-5 space-y-12">
             {/* Education Section */}
             <div>
@@ -142,73 +142,6 @@ export function Experience() {
                   </div>
                 </div>
               </motion.div>
-            </div>
-
-            {/* Achievements Section */}
-            <div>
-              <div className="flex items-center gap-4 mb-8">
-                <Award className="text-primary w-8 h-8" />
-                <h2 className="font-headline text-3xl font-bold tracking-tight uppercase text-on-surface">Achievements</h2>
-              </div>
-              <div className="space-y-4">
-                {[
-                  { 
-                    icon: Award, 
-                    title: 'Best Student Innovation — Achievers Awards 2026', 
-                    sub: 'Innovation Excellence',
-                    link: 'https://www.linkedin.com/posts/edric-jeffrey-sam-52502927b_still-taking-this-in-im-truly-honored-ugcPost-7443722607738327040-32V0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQrUa0B7xWqaVlcbuJ9b4xfjYO_GYg9y6U'
-                  },
-                  { 
-                    icon: Medal, 
-                    title: 'Outstanding Project Performance — Project Expo \'26', 
-                    sub: '1st Prize for Best Final Year Project',
-                    link: 'https://www.linkedin.com/posts/edric-jeffrey-sam-52502927b_really-happy-to-share-that-i-won-first-prize-ugcPost-7432475284685221888-Sxi4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQrUa0B7xWqaVlcbuJ9b4xfjYO_GYg9y6U'
-                  },
-                  { 
-                    icon: Calculator, 
-                    title: 'Perfect Score in Inferential Statistics', 
-                    sub: 'Academic Excellence' 
-                  },
-                  { 
-                    icon: Medal, 
-                    title: 'Mahatma Gandhi Merit Scholarship', 
-                    sub: 'Merit-Based Honor',
-                    link: 'https://www.linkedin.com/posts/edric-jeffrey-sam-52502927b_academics-scholarship-professionaldevelopment-activity-7309235200754950144-c5S6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQrUa0B7xWqaVlcbuJ9b4xfjYO_GYg9y6U'
-                  }
-                ].map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <motion.a 
-                      key={i}
-                      href={item.link || '#'}
-                      target={item.link ? "_blank" : undefined}
-                      rel={item.link ? "noreferrer" : undefined}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.1 }}
-                      className={`flex items-center gap-6 p-5 bg-surface-container-low transition-all border-r-2 group rounded-l-lg ${
-                        item.link 
-                          ? 'border-transparent hover:border-primary hover:bg-surface-container cursor-pointer' 
-                          : 'border-transparent cursor-default'
-                      }`}
-                    >
-                      <div className="w-12 h-12 flex items-center justify-center bg-surface-container-high rounded-lg text-primary group-hover:scale-110 transition-transform">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-headline font-bold text-on-surface">{item.title}</h4>
-                        <p className="text-xs text-outline uppercase tracking-tighter">{item.sub}</p>
-                      </div>
-                      {item.link && (
-                        <div className="opacity-0 group-hover:opacity-100 transition-opacity pr-2">
-                          <ExternalLink className="w-4 h-4 text-primary" />
-                        </div>
-                      )}
-                    </motion.a>
-                  );
-                })}
-              </div>
             </div>
           </section>
         </div>

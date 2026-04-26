@@ -249,47 +249,6 @@ export function TechStack() {
           </div>
         </motion.div>
       </div>
-
-      {/* System Architecture Terminal Block */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        className="mt-24"
-      >
-        <div className="flex items-center gap-4 mb-8">
-          <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent via-primary-container/30 to-transparent"></div>
-          <h3 className="font-headline text-sm font-black uppercase tracking-[0.4em] text-on-surface">Architecture Specification</h3>
-          <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent via-primary-container/30 to-transparent"></div>
-        </div>
-        <div className="bg-surface-container-lowest border-l-2 border-primary p-6 font-mono text-sm leading-relaxed overflow-x-auto shadow-2xl amethyst-glow">
-          <div className="flex gap-4 mb-2">
-            <span className="text-primary/60 font-bold">01</span>
-            <span className="text-on-surface font-semibold"><span className="text-primary-container">class</span> NeuralSystem:</span>
-          </div>
-          <div className="flex gap-4 mb-2">
-            <span className="text-primary/60 font-bold">02</span>
-            <span className="text-on-surface font-semibold">&nbsp;&nbsp;<span className="text-primary-container">def</span> __init__(self, load_balancer, model_registry):</span>
-          </div>
-          <div className="flex gap-4 mb-2">
-            <span className="text-primary/60 font-bold">03</span>
-            <span className="text-on-surface font-semibold">&nbsp;&nbsp;&nbsp;&nbsp;self.compute = <span className="text-secondary">"Docker_Azure_Cluster"</span></span>
-          </div>
-          <div className="flex gap-4 mb-2">
-            <span className="text-primary/60 font-bold">04</span>
-            <span className="text-on-surface font-semibold">&nbsp;&nbsp;&nbsp;&nbsp;self.retrieval = <span className="text-secondary">"FAISS_Vector_Store"</span></span>
-          </div>
-          <div className="flex gap-4 mb-2">
-            <span className="text-primary/60 font-bold">05</span>
-            <span className="text-on-surface font-semibold">&nbsp;&nbsp;&nbsp;&nbsp;self.latency = <span className="text-primary font-bold">&lt; 150ms</span></span>
-          </div>
-          <div className="flex gap-4">
-            <span className="text-primary/60 font-bold">06</span>
-            <span className="text-primary animate-pulse font-bold">_</span>
-          </div>
-        </div>
-      </motion.section>
     </section>
   );
 }
