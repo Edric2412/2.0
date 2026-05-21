@@ -130,7 +130,7 @@ export function Honors() {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -mr-64 -mt-64 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/10 blur-[100px] rounded-full -ml-32 -mb-32 pointer-events-none"></div>
 
-        <section className="max-w-screen-2xl mx-auto px-6 md:px-12 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <section className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           {/* Left Side Content */}
           <div className="lg:col-span-5 space-y-8 md:space-y-10">
             <div className="space-y-4 md:space-y-6">

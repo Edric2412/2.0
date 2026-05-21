@@ -3,8 +3,9 @@ import { Brain, Bot, Terminal, GitBranch, Layers, Blocks, Database, Network, Clo
 
 export function TechStack() {
   return (
-    <section id="tech-stack" className="pt-32 pb-20 px-4 md:px-12 lg:px-24 min-h-screen flex-1">
-      {/* Hero Header */}
+    <section id="tech-stack" className="pt-32 pb-20 flex-1">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        {/* Hero Header */}
       <header className="mb-20 max-w-4xl">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -248,6 +249,7 @@ export function TechStack() {
             </div>
           </div>
         </motion.div>
+      </div>
       </div>
     </section>
   );

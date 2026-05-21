@@ -25,5 +25,20 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    const path = window.location.pathname.replace(/^\//, '');
+    const targetId = hash || path;
+
+    if (targetId && targetId !== '') {
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 600);
+    }
+  }, []);
+
   return <>{children}</>;
 }

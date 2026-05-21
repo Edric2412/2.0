@@ -1,6 +1,12 @@
+import React from 'react';
 import { Terminal } from 'lucide-react';
 
 export function Footer() {
+  const handleTerminalClick = (e: React.MouseEvent, command?: string) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent('open-terminal', { detail: { command } }));
+  };
+
   return (
     <footer className="bg-surface w-full border-t border-outline-variant/15">
       <div className="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full max-w-7xl mx-auto">
@@ -13,9 +19,24 @@ export function Footer() {
           </div>
         </div>
         <div className="flex gap-10 my-8 md:my-0">
-          <a className="font-['Space_Grotesk'] text-[10px] text-on-surface hover:text-primary hover:translate-x-2 transition-all duration-500 tracking-widest uppercase" href="#">Privacy Policy</a>
-          <a className="font-['Space_Grotesk'] text-[10px] text-on-surface hover:text-primary hover:translate-x-2 transition-all duration-500 tracking-widest uppercase" href="#">Terminal Access</a>
-          <a className="font-['Space_Grotesk'] text-[10px] text-on-surface hover:text-primary hover:translate-x-2 transition-all duration-500 tracking-widest uppercase" href="#">Source Code</a>
+          <button 
+            className="font-['Space_Grotesk'] text-[10px] text-on-surface hover:text-primary hover:translate-x-2 transition-all duration-500 tracking-widest uppercase cursor-pointer bg-transparent border-none p-0 outline-none" 
+            onClick={(e) => handleTerminalClick(e, 'privacy')}
+          >
+            Privacy Policy
+          </button>
+          <button 
+            className="font-['Space_Grotesk'] text-[10px] text-on-surface hover:text-primary hover:translate-x-2 transition-all duration-500 tracking-widest uppercase cursor-pointer bg-transparent border-none p-0 outline-none" 
+            onClick={(e) => handleTerminalClick(e)}
+          >
+            Terminal Access
+          </button>
+          <a 
+            className="font-['Space_Grotesk'] text-[10px] text-on-surface hover:text-primary hover:translate-x-2 transition-all duration-500 tracking-widest uppercase" 
+            href="#"
+          >
+            Source Code
+          </a>
         </div>
         <div className="flex items-center gap-4 text-outline">
           <Terminal className="w-4 h-4" />

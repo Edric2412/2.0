@@ -2,6 +2,7 @@ import React from 'react';
 import { TopNav } from './TopNav';
 import { SideNav } from './SideNav';
 import { Footer } from './Footer';
+import { TerminalModal } from './TerminalModal';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,6 +12,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </div>
       <Footer />
+      <TerminalModal />
     </div>
   );
 }
