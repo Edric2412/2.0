@@ -38,15 +38,15 @@ const THEME_CONFIG = {
 const SHARED_CONFIG = {
   // Network Topography
   resolution: 3, 
-  maxNodeSpacing: 0.015, 
-  minNodeSpacing: 0.006, 
-  connectionDistance: 0.015, 
+  maxNodeSpacing: 0.016, 
+  minNodeSpacing: 0.007, 
+  connectionDistance: 0.016, 
   maxConnections: 3, 
   hubRatio: 0.02, 
   
   // Animation & Physics
   parallaxStrength: 0.10,
-  pulseCount: 40,
+  pulseCount: 25, // Reduced from 40 to save updates and draws per frame
   pulseSpeedBase: 0.015,
 };
 
@@ -222,46 +222,98 @@ export function NeuralPortrait() {
       oCtx.drawImage(img, 0, 0, procWidth, procHeight);
       const alphaData = oCtx.getImageData(0, 0, procWidth, procHeight).data;
 
-      // 2. Fill white to prevent transparent pixels from becoming black holes
+      // 2. Fill white background
       oCtx.fillStyle = '#ffffff';
       oCtx.fillRect(0, 0, procWidth, procHeight);
 
-      // 3. Apply contrast boost to enhance facial features
-      oCtx.filter = 'grayscale(100%) contrast(120%) brightness(110%)';
+      // 3. Draw in grayscale for consistent luminance extraction
+      oCtx.filter = 'grayscale(100%)';
       oCtx.drawImage(img, 0, 0, procWidth, procHeight);
       const imgData = oCtx.getImageData(0, 0, procWidth, procHeight).data;
       
+      // Create a fast-lookup luma map for gradient (edge) detection
+      const lumaMap = new Float32Array(procWidth * procHeight);
+      lumaMap.fill(255); // Default to white (lightest background)
+      
+      let minLuma = 255;
+      let maxLuma = 0;
+      
+      // Scan opaque region first to find dynamic luma range
+      for (let y = 0; y < procHeight; y++) {
+        for (let x = 0; x < procWidth; x++) {
+          const idx = (y * procWidth + x) * 4;
+          const alpha = alphaData[idx + 3];
+          if (alpha >= 20) {
+            const luma = imgData[idx]; // R channel is equivalent to grayscale luma
+            lumaMap[y * procWidth + x] = luma;
+            if (luma < minLuma) minLuma = luma;
+            if (luma > maxLuma) maxLuma = luma;
+          }
+        }
+      }
+      
       const rawPoints: any[] = [];
+      const step = SHARED_CONFIG.resolution;
+      
+      const getPixelLuma = (px: number, py: number) => {
+        if (px < 0 || px >= procWidth || py < 0 || py >= procHeight) return 255;
+        return lumaMap[py * procWidth + px];
+      };
 
-      for (let y = 2; y < procHeight - 2; y += SHARED_CONFIG.resolution) {
-        for (let x = 2; x < procWidth - 2; x += SHARED_CONFIG.resolution) {
+      for (let y = 2; y < procHeight - 2; y += step) {
+        for (let x = 2; x < procWidth - 2; x += step) {
           
           // Extract Alpha. If pixel is transparent/background, SKIP IT.
           const alphaIdx = (y * procWidth + x) * 4 + 3;
           if (alphaData[alphaIdx] < 20) continue;
           
-          const luma = imgData[(y * procWidth + x) * 4]; 
-          let darkness = 255 - luma;
+          const rawLuma = lumaMap[y * procWidth + x];
+          
+          // Perform dynamic contrast stretching
+          const stretchedLuma = maxLuma > minLuma 
+            ? ((rawLuma - minLuma) / (maxLuma - minLuma)) * 255 
+            : rawLuma;
+          
+          // Calculate Sobel-style local gradients for facial feature outline detection
+          const lumaLeft = maxLuma > minLuma ? ((getPixelLuma(x - step, y) - minLuma) / (maxLuma - minLuma)) * 255 : getPixelLuma(x - step, y);
+          const lumaRight = maxLuma > minLuma ? ((getPixelLuma(x + step, y) - minLuma) / (maxLuma - minLuma)) * 255 : getPixelLuma(x + step, y);
+          const lumaTop = maxLuma > minLuma ? ((getPixelLuma(x, y - step) - minLuma) / (maxLuma - minLuma)) * 255 : getPixelLuma(x, y - step);
+          const lumaBottom = maxLuma > minLuma ? ((getPixelLuma(x, y + step) - minLuma) / (maxLuma - minLuma)) * 255 : getPixelLuma(x, y + step);
+          
+          const gx = lumaRight - lumaLeft;
+          const gy = lumaBottom - lumaTop;
+          const gradient = Math.sqrt(gx * gx + gy * gy);
+          
+          let darkness = 255 - stretchedLuma;
 
-          // Check if it's an edge pixel (outline of the person)
+          // Check if it's an outline boundary of the person
           const leftAlpha = alphaData[(y * procWidth + (x - 2)) * 4 + 3];
           const rightAlpha = alphaData[(y * procWidth + (x + 2)) * 4 + 3];
           const topAlpha = alphaData[((y - 2) * procWidth + x) * 4 + 3];
           const bottomAlpha = alphaData[((y + 2) * procWidth + x) * 4 + 3];
           
-          const isEdge = leftAlpha < 20 || rightAlpha < 20 || topAlpha < 20 || bottomAlpha < 20;
-          
-          if (isEdge) {
-            darkness = Math.max(darkness, 220); // Heavily boost outline density
+          const isOutline = leftAlpha < 20 || rightAlpha < 20 || topAlpha < 20 || bottomAlpha < 20;
+          const isFeatureEdge = gradient > 20; // Facial features (eyes, nose, lips, eyebrows)
+
+          if (isOutline) {
+            darkness = Math.max(darkness, 240); // Keep strong outer silhouette
+          } else if (isFeatureEdge) {
+            // Strong gradient = local feature contour (eyes, nose, mouth, moustache, etc.). Force tight stippling density.
+            darkness = Math.max(darkness, 210 + (gradient / 255) * 45);
           } else {
-            darkness = Math.max(darkness, 60); // Ensure a minimum density for light areas (skin/clothes)
+            // Flat region (solid skin, flat hair or clothing).
+            // Skip light skin areas entirely for a clean, high-contrast, high-performance stippled portrait.
+            if (darkness < 110) continue;
+            
+            // Cap flat dark regions (hair/clothing, beard/moustache shadows) to keep them defined but avoid overflow.
+            darkness = Math.min(darkness, 200);
           }
 
           rawPoints.push({
             nx: x / procWidth,
             ny: y / procHeight,
             score: darkness,
-            luma: luma
+            luma: stretchedLuma
           });
         }
       }
@@ -277,9 +329,10 @@ export function NeuralPortrait() {
 
       for (const pt of rawPoints) {
         // Map score to required spacing. High score (dark) = tight packing. Low score (light) = sparse.
-        // Use linear mapping instead of Math.pow to prevent light areas from becoming too sparse
+        // Use a quadratic curve (power of 2) to increase the density contrast between dark features and light skin
         const normalizedScore = pt.score / 255;
-        const requiredSpacing = SHARED_CONFIG.minNodeSpacing + (SHARED_CONFIG.maxNodeSpacing - SHARED_CONFIG.minNodeSpacing) * (1 - normalizedScore);
+        const requiredSpacing = SHARED_CONFIG.minNodeSpacing + 
+          (SHARED_CONFIG.maxNodeSpacing - SHARED_CONFIG.minNodeSpacing) * Math.pow(1 - normalizedScore, 2);
         const reqSpacingSq = requiredSpacing * requiredSpacing;
 
         let tooClose = false;
@@ -311,7 +364,7 @@ export function NeuralPortrait() {
         }
       }
 
-      const MAX_NODES = window.innerWidth < 768 ? 3000 : 8000;
+      const MAX_NODES = window.innerWidth < 768 ? 2400 : 6000; // Adjusted for performance testing (mobile: 2400, desktop: 6000)
       if (imagePoints.length > MAX_NODES) {
         // Uniformly downsample instead of truncating the lightest points
         // This ensures the face (lighter points) isn't completely deleted if the hair (dark points) fills the budget
