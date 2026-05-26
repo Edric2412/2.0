@@ -623,64 +623,48 @@ export function NeuralPortrait() {
       ctx.globalCompositeOperation = currentThemeStrings.composite;
       const maxDistSq = Math.pow(canvasWidth * 0.12, 2);
 
-      // 1. Draw all normal lines (Node to Node)
-      ctx.lineWidth = 0.2;
-      ctx.strokeStyle = currentThemeStrings.lineNormal;
-      ctx.beginPath();
-      nodes.forEach(nodeA => {
-        if (nodeA.z < 0.15 || nodeA.isHub) return;
-        nodeA.connections.forEach((targetId: number) => {
-          const nodeB = nodes[targetId];
-          if (nodeB.z < 0.15 || nodeB.isHub) return;
-          const dx = nodeA.currentX - nodeB.currentX;
-          const dy = nodeA.currentY - nodeB.currentY;
-          if (dx*dx + dy*dy < maxDistSq) {
-            ctx.moveTo(nodeA.currentX, nodeA.currentY);
-            ctx.lineTo(nodeB.currentX, nodeB.currentY);
-          }
-        });
-      });
-      ctx.stroke();
+      // 1-3. Draw all lines in a single pass using Path2D for performance
+      const pathNormal = new Path2D();
+      const pathMixed = new Path2D();
+      const pathHub = new Path2D();
 
-      // 2. Draw mixed lines (Hub to Node)
-      ctx.lineWidth = 0.4;
-      ctx.strokeStyle = currentThemeStrings.lineMixed;
-      ctx.beginPath();
       nodes.forEach(nodeA => {
         if (nodeA.z < 0.15) return;
         nodeA.connections.forEach((targetId: number) => {
           const nodeB = nodes[targetId];
           if (nodeB.z < 0.15) return;
-          if (nodeA.isHub !== nodeB.isHub) {
-            const dx = nodeA.currentX - nodeB.currentX;
-            const dy = nodeA.currentY - nodeB.currentY;
-            if (dx*dx + dy*dy < maxDistSq) {
-              ctx.moveTo(nodeA.currentX, nodeA.currentY);
-              ctx.lineTo(nodeB.currentX, nodeB.currentY);
+
+          const dx = nodeA.currentX - nodeB.currentX;
+          const dy = nodeA.currentY - nodeB.currentY;
+          if (dx*dx + dy*dy < maxDistSq) {
+            if (!nodeA.isHub && !nodeB.isHub) {
+              pathNormal.moveTo(nodeA.currentX, nodeA.currentY);
+              pathNormal.lineTo(nodeB.currentX, nodeB.currentY);
+            } else if (nodeA.isHub !== nodeB.isHub) {
+              pathMixed.moveTo(nodeA.currentX, nodeA.currentY);
+              pathMixed.lineTo(nodeB.currentX, nodeB.currentY);
+            } else {
+              pathHub.moveTo(nodeA.currentX, nodeA.currentY);
+              pathHub.lineTo(nodeB.currentX, nodeB.currentY);
             }
           }
         });
       });
-      ctx.stroke();
 
-      // 3. Draw Hub lines (Hub to Hub)
+      // Draw normal lines (Node to Node)
+      ctx.lineWidth = 0.2;
+      ctx.strokeStyle = currentThemeStrings.lineNormal;
+      ctx.stroke(pathNormal);
+
+      // Draw mixed lines (Hub to Node)
+      ctx.lineWidth = 0.4;
+      ctx.strokeStyle = currentThemeStrings.lineMixed;
+      ctx.stroke(pathMixed);
+
+      // Draw Hub lines (Hub to Hub)
       ctx.lineWidth = 0.8;
       ctx.strokeStyle = currentThemeStrings.lineHub;
-      ctx.beginPath();
-      nodes.forEach(nodeA => {
-        if (nodeA.z < 0.15 || !nodeA.isHub) return;
-        nodeA.connections.forEach((targetId: number) => {
-          const nodeB = nodes[targetId];
-          if (nodeB.z < 0.15 || !nodeB.isHub) return;
-          const dx = nodeA.currentX - nodeB.currentX;
-          const dy = nodeA.currentY - nodeB.currentY;
-          if (dx*dx + dy*dy < maxDistSq) {
-            ctx.moveTo(nodeA.currentX, nodeA.currentY);
-            ctx.lineTo(nodeB.currentX, nodeB.currentY);
-          }
-        });
-      });
-      ctx.stroke();
+      ctx.stroke(pathHub);
 
       // 4. Draw Pulses
       pulses.forEach((pulse, index) => {
