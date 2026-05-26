@@ -423,13 +423,37 @@ export function NeuralPortrait() {
       nodes = [];
       const numNodes = imagePoints.length;
       
+      // OPTIMIZATION: Spatial grid for density calculation (O(N) instead of O(N^2))
+      const densityCellSize = Math.sqrt(0.001);
+      const densityCols = Math.ceil(1.0 / densityCellSize);
+      const densityRows = Math.ceil(1.0 / densityCellSize);
+      const densityGrid: number[][] = new Array(densityCols * densityRows).fill(null).map(() => []);
+
+      for (let i = 0; i < numNodes; i++) {
+        const pt = imagePoints[i];
+        const col = Math.max(0, Math.min(densityCols - 1, Math.floor(pt.nx / densityCellSize)));
+        const row = Math.max(0, Math.min(densityRows - 1, Math.floor(pt.ny / densityCellSize)));
+        densityGrid[row * densityCols + col].push(i);
+      }
+
       for (let i = 0; i < numNodes; i++) {
         let density = 0;
-        for (let j = 0; j < numNodes; j++) {
-          if (i === j) continue;
-          const dx = imagePoints[i].nx - imagePoints[j].nx;
-          const dy = imagePoints[i].ny - imagePoints[j].ny;
-          if (dx*dx + dy*dy < 0.001) density++; 
+        const ptA = imagePoints[i];
+        const colA = Math.floor(ptA.nx / densityCellSize);
+        const rowA = Math.floor(ptA.ny / densityCellSize);
+
+        for (let r = Math.max(0, rowA - 1); r <= Math.min(densityRows - 1, rowA + 1); r++) {
+          for (let c = Math.max(0, colA - 1); c <= Math.min(densityCols - 1, colA + 1); c++) {
+            const cell = densityGrid[r * densityCols + c];
+            for (let k = 0; k < cell.length; k++) {
+              const j = cell[k];
+              if (i === j) continue;
+              const ptB = imagePoints[j];
+              const dx = ptA.nx - ptB.nx;
+              const dy = ptA.ny - ptB.ny;
+              if (dx*dx + dy*dy < 0.001) density++;
+            }
+          }
         }
         imagePoints[i].finalHubScore = density + (imagePoints[i].score * 0.1);
       }
@@ -463,22 +487,44 @@ export function NeuralPortrait() {
         });
       }
 
+      // OPTIMIZATION: Spatial grid for node connections (O(N) instead of O(N^2))
       const connDistSq = SHARED_CONFIG.connectionDistance * SHARED_CONFIG.connectionDistance;
+      const connCellSize = SHARED_CONFIG.connectionDistance;
+      const connCols = Math.ceil(1.0 / connCellSize);
+      const connRows = Math.ceil(1.0 / connCellSize);
+      const connGrid: number[][] = new Array(connCols * connRows).fill(null).map(() => []);
+
+      for (let i = 0; i < nodes.length; i++) {
+        const node = nodes[i];
+        const col = Math.max(0, Math.min(connCols - 1, Math.floor(node.startX / connCellSize)));
+        const row = Math.max(0, Math.min(connRows - 1, Math.floor(node.startY / connCellSize)));
+        connGrid[row * connCols + col].push(i);
+      }
+
       for (let i = 0; i < nodes.length; i++) {
         const nodeA = nodes[i];
         const distances = [];
         
-        for (let j = 0; j < nodes.length; j++) {
-          if (i === j) continue;
-          const nodeB = nodes[j];
-          const dx = nodeA.startX - nodeB.startX;
-          const dy = nodeA.startY - nodeB.startY;
-          const distSq = dx*dx + dy*dy;
-          
-          if (distSq < connDistSq) {
-            const dist = Math.sqrt(distSq);
-            const weight = nodeB.isHub ? dist * 0.5 : dist;
-            distances.push({ id: j, dist, weight });
+        const colA = Math.floor(nodeA.startX / connCellSize);
+        const rowA = Math.floor(nodeA.startY / connCellSize);
+
+        for (let r = Math.max(0, rowA - 1); r <= Math.min(connRows - 1, rowA + 1); r++) {
+          for (let c = Math.max(0, colA - 1); c <= Math.min(connCols - 1, colA + 1); c++) {
+            const cell = connGrid[r * connCols + c];
+            for (let k = 0; k < cell.length; k++) {
+              const j = cell[k];
+              if (i === j) continue;
+              const nodeB = nodes[j];
+              const dx = nodeA.startX - nodeB.startX;
+              const dy = nodeA.startY - nodeB.startY;
+              const distSq = dx*dx + dy*dy;
+
+              if (distSq < connDistSq) {
+                const dist = Math.sqrt(distSq);
+                const weight = nodeB.isHub ? dist * 0.5 : dist;
+                distances.push({ id: j, dist, weight });
+              }
+            }
           }
         }
         
