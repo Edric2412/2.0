@@ -3,17 +3,17 @@ import { ThemeToggle } from './ThemeToggle';
 import { Menu, X, Github, Linkedin, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+const navLinks = [
+  { id: 'home', label: 'Home' },
+  { id: 'experience', label: 'Experience & Education' },
+  { id: 'tech-stack', label: 'Tech Stack' },
+  { id: 'projects', label: 'Projects & Research' },
+  { id: 'honors', label: 'Honors & Certifications' }
+];
+
 export function TopNav() {
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'experience', label: 'Experience & Education' },
-    { id: 'tech-stack', label: 'Tech Stack' },
-    { id: 'projects', label: 'Projects & Research' },
-    { id: 'honors', label: 'Honors & Certifications' }
-  ];
 
   useEffect(() => {
     const options = {
