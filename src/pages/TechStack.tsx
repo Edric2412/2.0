@@ -2,6 +2,24 @@ import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Brain, Bot, Terminal, GitBranch, Layers, Blocks, Database, Network, Cloud } from 'lucide-react';
 
+
+const INTELLIGENCE_SKILLS = ['NLP', 'BERT', 'RAG', 'Agentic AI', 'Generative AI', 'LoRA/QLoRA', 'Reinforcement Learning (PPO)'];
+const VISION_SKILLS = ['Computer Vision', 'Image Processing', 'OpenCV', 'YOLO'];
+const EVALUATION_SKILLS = ['Model Evaluation', 'Hallucination Detection', 'Bayesian Knowledge Tracing'];
+const LANGUAGES = [
+  { name: 'Python', width: '95%' },
+  { name: 'JavaScript', width: '80%' },
+  { name: 'R', width: '65%' }
+];
+const ML_FRAMEWORKS = ['Langchain', 'LangGraph', 'Google Gen AI SDK', 'scikit-learn', 'Tensorflow', 'Pytorch', 'Hugging Face', 'Nomic Atlas', 'DeepEval', 'Gymnasium', 'Stable-Baselines3', 'Transformers'];
+const BACKEND_TECH = ['FastAPI', 'Django', 'Node.js', 'Express.js', 'SSE Streaming', 'Rest APIs', 'WebSockets', 'ngrok'];
+const MLOPS_ITEMS = [
+  { label: 'Compute', val: 'Docker' },
+  { label: 'Pipeline', val: 'Celery' },
+  { label: 'Cache', val: 'Redis' },
+  { label: 'Orchestrator', val: 'Async Proc' }
+];
+
 export function TechStack() {
   useEffect(() => {
     document.title = "Technical Ecosystem | Edric Jeffrey Sam";
@@ -68,7 +86,7 @@ export function TechStack() {
                 <div>
                   <h3 className="font-headline text-xs font-bold uppercase tracking-widest mb-3 text-primary-container">Intelligence & NLP</h3>
                   <div className="flex flex-wrap gap-2">
-                    {['NLP', 'BERT', 'RAG', 'Agentic AI', 'Generative AI', 'LoRA/QLoRA', 'Reinforcement Learning (PPO)'].map(skill => (
+                    {INTELLIGENCE_SKILLS.map(skill => (
                       <span key={skill} className="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-medium border border-outline-variant/30">{skill}</span>
                     ))}
                   </div>
@@ -76,7 +94,7 @@ export function TechStack() {
                 <div>
                   <h3 className="font-headline text-xs font-bold uppercase tracking-widest mb-3 text-on-surface">Vision & Perception</h3>
                   <div className="flex flex-wrap gap-2">
-                    {['Computer Vision', 'Image Processing', 'OpenCV', 'YOLO'].map(skill => (
+                    {VISION_SKILLS.map(skill => (
                       <span key={skill} className="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-medium border border-outline-variant/30">{skill}</span>
                     ))}
                   </div>
@@ -86,7 +104,7 @@ export function TechStack() {
                 <div>
                   <h3 className="font-headline text-xs font-bold uppercase tracking-widest mb-3 text-on-surface">Evaluation & Cognition</h3>
                   <div className="flex flex-wrap gap-2">
-                    {['Model Evaluation', 'Hallucination Detection', 'Bayesian Knowledge Tracing'].map(skill => (
+                    {EVALUATION_SKILLS.map(skill => (
                       <span key={skill} className="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-medium border border-outline-variant/30">{skill}</span>
                     ))}
                   </div>
@@ -109,11 +127,7 @@ export function TechStack() {
             <h2 className="font-headline text-2xl font-bold text-on-surface">Languages</h2>
           </div>
           <ul className="space-y-6 flex-grow">
-            {[
-              { name: 'Python', width: '95%' },
-              { name: 'JavaScript', width: '80%' },
-              { name: 'R', width: '65%' }
-            ].map(lang => (
+            {LANGUAGES.map(lang => (
               <li key={lang.name} className="flex items-center justify-between">
                 <span className="font-headline font-medium text-on-surface">{lang.name}</span>
                 <div className="w-32 h-1 bg-surface-container-high relative">
@@ -152,7 +166,7 @@ export function TechStack() {
             <h2 className="font-headline text-xl font-bold uppercase tracking-tight text-on-surface">ML Frameworks & Libraries</h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            {['Langchain', 'LangGraph', 'Google Gen AI SDK', 'scikit-learn', 'Tensorflow', 'Pytorch', 'Hugging Face', 'Nomic Atlas', 'DeepEval', 'Gymnasium', 'Stable-Baselines3', 'Transformers'].map(fw => (
+            {ML_FRAMEWORKS.map(fw => (
               <div key={fw} className="flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-sm border border-outline-variant/30 hover:border-primary/50 transition-colors">
                 <span className="text-xs font-semibold text-on-surface">{fw}</span>
               </div>
@@ -173,7 +187,7 @@ export function TechStack() {
             <h2 className="font-headline text-xl font-bold text-on-surface">Backend & API</h2>
           </div>
           <div className="flex flex-wrap gap-2">
-            {['FastAPI', 'Django', 'Node.js', 'Express.js', 'SSE Streaming', 'Rest APIs', 'WebSockets', 'ngrok'].map(tech => (
+            {BACKEND_TECH.map(tech => (
               <span key={tech} className="text-xs font-bold bg-surface-container-highest px-2 py-1 text-on-surface border border-primary/10">{tech}</span>
             ))}
           </div>
@@ -220,12 +234,7 @@ export function TechStack() {
             <h2 className="font-headline text-xl font-bold text-on-surface">MLOps</h2>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            {[
-              { label: 'Compute', val: 'Docker' },
-              { label: 'Pipeline', val: 'Celery' },
-              { label: 'Cache', val: 'Redis' },
-              { label: 'Orchestrator', val: 'Async Proc' }
-            ].map(item => (
+            {MLOPS_ITEMS.map(item => (
               <div key={item.label} className="p-2 bg-surface-container-lowest border border-outline-variant/20 text-center">
                 <span className="text-[9px] block uppercase tracking-tighter mb-1 text-on-surface-variant font-bold">{item.label}</span>
                 <span className="text-[11px] font-bold text-on-surface">{item.val}</span>
