@@ -348,7 +348,7 @@ export function Honors() {
                   return (
                     <div
                       key={index}
-                      className={`certificate-card group ${!isCurrent ? 'inactive-tint border-primary/20' : 'border-primary/60 shadow-[0_0_80px_rgba(157,78,221,0.2)] dark:shadow-[0_0_80px_rgba(199,125,255,0.4)]'}`}
+                      className={`certificate-card group ${!isCurrent ? 'inactive-tint' : 'shadow-[0_0_80px_rgba(157,78,221,0.2)]'}`}
                       style={{
                         transform: `translateX(${translateX}px) translateY(${translateY}px) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) scale(${scale})`,
                         zIndex,
@@ -365,7 +365,7 @@ export function Honors() {
                       }}
                     >
                       {isCurrent && cert.link && cert.link !== "#" && (
-                        <div className="absolute top-6 right-6 z-20 p-2 md:p-2.5 bg-surface-container-high rounded-full border border-outline-variant/30 text-on-surface hover:text-primary transition-colors duration-300 shadow-lg" title="View Certificate">
+                        <div className="absolute top-6 right-6 z-20 p-2 md:p-2.5 bg-[#d8b4fe] rounded-full border border-[#d8b4fe]/30 text-[#10002b] hover:text-[#9d4edd] transition-colors duration-300 shadow-lg" title="View Certificate">
                           <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
                         </div>
                       )}
@@ -378,15 +378,15 @@ export function Honors() {
 
                       <div className={`card-content transition-opacity duration-500 p-6 md:p-10 pointer-events-none ${isCurrent ? 'opacity-100' : 'opacity-30'}`}>
                         <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                          <cert.icon className="text-primary w-6 h-6 md:w-8 md:h-8" />
-                          <div className="h-[1px] flex-1 bg-white/30 dark:bg-white/10"></div>
+                          <cert.icon className="text-[#9d4edd] w-6 h-6 md:w-8 md:h-8" />
+                          <div className="h-[1px] flex-1 bg-white/30"></div>
                         </div>
                         <h3 className="font-body text-xl md:text-2xl font-semibold text-white mb-2 md:mb-3">
                           {cert.title}
                         </h3>
                         <div className="flex items-center gap-2">
-                          <BadgeCheck className="text-primary w-4 h-4" />
-                          <p className="text-xs md:text-sm text-primary font-body font-medium uppercase tracking-[0.1em]">{cert.issuer}</p>
+                          <BadgeCheck className="text-[#9d4edd] w-4 h-4" />
+                          <p className="text-xs md:text-sm text-[#9d4edd] font-body font-medium uppercase tracking-[0.1em]">{cert.issuer}</p>
                         </div>
                       </div>
                     </div>
