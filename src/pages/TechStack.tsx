@@ -1,7 +1,15 @@
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Brain, Bot, Terminal, GitBranch, Layers, Blocks, Database, Network, Cloud } from 'lucide-react';
 
 export function TechStack() {
+  useEffect(() => {
+    document.title = "Technical Ecosystem | Edric Jeffrey Sam";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Explore my technical competencies across Machine Learning, NLP, ML Frameworks, MLOps, Backend, and Data Systems.');
+    }
+  }, []);
   return (
     <section id="tech-stack" className="pt-32 pb-20 flex-1">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -60,7 +68,7 @@ export function TechStack() {
                 <div>
                   <h3 className="font-headline text-xs font-bold uppercase tracking-widest mb-3 text-primary-container">Intelligence & NLP</h3>
                   <div className="flex flex-wrap gap-2">
-                    {['NLP', 'BERT', 'RAG', 'Generative AI', 'LoRA/QLoRA', 'Reinforcement Learning (PPO)'].map(skill => (
+                    {['NLP', 'BERT', 'RAG', 'Agentic AI', 'Generative AI', 'LoRA/QLoRA', 'Reinforcement Learning (PPO)'].map(skill => (
                       <span key={skill} className="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-medium border border-outline-variant/30">{skill}</span>
                     ))}
                   </div>
@@ -114,12 +122,18 @@ export function TechStack() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 pt-8 border-t border-outline-variant/20">
+          <div className="mt-8 pt-8 border-t border-outline-variant/20 space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Version Control</span>
               <div className="flex items-center gap-2 text-primary font-bold text-sm">
                 <GitBranch className="w-4 h-4" />
                 Git
+              </div>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">OS & Env</span>
+              <div className="flex items-center gap-2 text-primary font-bold text-sm">
+                Linux (Fedora)
               </div>
             </div>
           </div>
@@ -138,7 +152,7 @@ export function TechStack() {
             <h2 className="font-headline text-xl font-bold uppercase tracking-tight text-on-surface">ML Frameworks & Libraries</h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            {['Langchain', 'Google Gen AI SDK', 'scikit-learn', 'Tensorflow', 'Pytorch', 'Hugging Face', 'Gymnasium', 'Stable-Baselines3', 'Transformers'].map(fw => (
+            {['Langchain', 'LangGraph', 'Google Gen AI SDK', 'scikit-learn', 'Tensorflow', 'Pytorch', 'Hugging Face', 'Nomic Atlas', 'DeepEval', 'Gymnasium', 'Stable-Baselines3', 'Transformers'].map(fw => (
               <div key={fw} className="flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-sm border border-outline-variant/30 hover:border-primary/50 transition-colors">
                 <span className="text-xs font-semibold text-on-surface">{fw}</span>
               </div>
@@ -159,7 +173,7 @@ export function TechStack() {
             <h2 className="font-headline text-xl font-bold text-on-surface">Backend & API</h2>
           </div>
           <div className="flex flex-wrap gap-2">
-            {['FastAPI', 'Django', 'Node.js', 'Express.js', 'Rest APIs', 'WebSockets', 'ngrok'].map(tech => (
+            {['FastAPI', 'Django', 'Node.js', 'Express.js', 'SSE Streaming', 'Rest APIs', 'WebSockets', 'ngrok'].map(tech => (
               <span key={tech} className="text-xs font-bold bg-surface-container-highest px-2 py-1 text-on-surface border border-primary/10">{tech}</span>
             ))}
           </div>
@@ -187,7 +201,7 @@ export function TechStack() {
               <span className="text-[10px] font-mono text-primary font-bold">GRAPH</span>
             </div>
             <div className="flex justify-between items-center text-sm">
-              <span className="text-on-surface font-medium">FAISS</span>
+              <span className="text-on-surface font-medium">Pinecone / ChromaDB / FAISS</span>
               <span className="text-[10px] font-mono text-primary font-bold">VECTOR</span>
             </div>
           </div>
@@ -220,6 +234,7 @@ export function TechStack() {
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="text-[10px] font-bold bg-primary-container/20 text-primary border border-primary-container/30 px-2 py-0.5">LLM Inference Pipelines</span>
+            <span className="text-[10px] font-bold bg-primary-container/20 text-primary border border-primary-container/30 px-2 py-0.5">Containerization</span>
             <span className="text-[10px] font-bold bg-primary-container/20 text-primary border border-primary-container/30 px-2 py-0.5">Model Monitoring</span>
           </div>
         </motion.div>

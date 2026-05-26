@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Quote, Send, Download, Terminal, Cpu, Microscope, Mail, Phone } from 'lucide-react';
 import { NeuralPortrait } from '../components/NeuralPortrait';
 import resumePdf from '../assets/resume.pdf?url';
 
 export function Home() {
+  useEffect(() => {
+    document.title = "Edric Jeffrey Sam | GenAI & AI/ML Engineer";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Portfolio of Edric Jeffrey Sam - GenAI & AI/ML Engineer. Building advanced RAG pipelines, Agentic AI, and scalable machine learning systems.');
+    }
+  }, []);
   return (
     <section id="home" className="min-h-screen pt-20 relative overflow-hidden flex-1">
       {/* Animated Amethyst Circuit Background */}
@@ -63,7 +71,7 @@ export function Home() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4 pt-4"
             >
-              <a href="mailto:edricjeffrey07@gmail.com" className="amethyst-gradient text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-headline font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center gap-3 hover:shadow-[0_0_40px_rgba(123,44,191,0.4)] transition-all hover:-translate-y-1 w-full sm:w-auto justify-center">
+              <a href="mailto:edricjsam@gmail.com" className="amethyst-gradient text-white px-6 md:px-10 py-4 md:py-5 rounded-xl font-headline font-black text-xs md:text-sm uppercase tracking-[0.2em] flex items-center gap-3 hover:shadow-[0_0_40px_rgba(123,44,191,0.4)] transition-all hover:-translate-y-1 w-full sm:w-auto justify-center">
                 Contact Me
                 <Send className="w-4 h-4 md:w-5 md:h-5" />
               </a>
@@ -84,9 +92,9 @@ export function Home() {
                 <Terminal className="w-4 h-4 text-primary" />
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface">Linux x86_64</span>
               </div>
-              <a href="mailto:edricjeffrey07@gmail.com" className="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg hover:border-primary/50 transition-colors">
+              <a href="mailto:edricjsam@gmail.com" className="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg hover:border-primary/50 transition-colors">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface">edricjeffrey07@gmail.com</span>
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface">edricjsam@gmail.com</span>
               </a>
               <a href="tel:+917305528953" className="flex items-center gap-2 px-4 py-2 bg-surface-container-low border border-outline/20 rounded-lg hover:border-primary/50 transition-colors">
                 <Phone className="w-4 h-4 text-primary" />
@@ -140,7 +148,7 @@ export function Home() {
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 pb-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {[
-            { num: '02', label: 'Internships', sub: 'Industry Proven' },
+            { num: '03', label: 'Internships', sub: 'Industry Proven' },
             { num: '05', label: 'Projects', sub: 'Full-Stack AI' },
             { num: '02', label: 'Publications', sub: 'IEEE/CVPR Core' },
             { num: 'BEST FYP', label: 'Academic Excellence', sub: 'Award Winner', textClass: 'text-3xl leading-tight' },

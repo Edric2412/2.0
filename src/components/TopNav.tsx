@@ -82,7 +82,7 @@ export function TopNav() {
             </div>
 
             <ThemeToggle />
-            <a href="mailto:edricjeffrey07@gmail.com" className="hidden sm:block amethyst-gradient text-white px-6 md:px-8 py-2 md:py-2.5 rounded-lg font-headline font-bold text-xs md:text-sm scale-95 hover:scale-100 active:scale-90 transition-all uppercase tracking-wider shadow-[0_0_20px_rgba(157,78,221,0.3)]">
+            <a href="mailto:edricjsam@gmail.com" className="hidden sm:block amethyst-gradient text-white px-6 md:px-8 py-2 md:py-2.5 rounded-lg font-headline font-bold text-xs md:text-sm scale-95 hover:scale-100 active:scale-90 transition-all uppercase tracking-wider shadow-[0_0_20px_rgba(157,78,221,0.3)]">
               Contact
             </a>
 
@@ -117,7 +117,7 @@ export function TopNav() {
               </button>
             ))}
             <a
-              href="mailto:edricjeffrey07@gmail.com"
+              href="mailto:edricjsam@gmail.com"
               onClick={() => setIsMobileMenuOpen(false)}
               className="amethyst-gradient text-white px-8 py-4 mt-6 rounded-xl font-headline font-bold text-sm uppercase tracking-wider shadow-lg shadow-primary/20 w-full text-center block"
             >

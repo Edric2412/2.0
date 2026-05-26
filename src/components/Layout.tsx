@@ -1,6 +1,5 @@
 import React from 'react';
 import { TopNav } from './TopNav';
-import { SideNav } from './SideNav';
 import { Footer } from './Footer';
 import { TerminalModal } from './TerminalModal';
 

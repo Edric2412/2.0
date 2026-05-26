@@ -1,7 +1,15 @@
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { BrainCircuit, ArrowRight, ExternalLink, Compass, FileText, Gauge, Hash, CheckCircle, GraduationCap } from 'lucide-react';
 
 export function Projects() {
+  useEffect(() => {
+    document.title = "Featured Projects | Edric Jeffrey Sam";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Browse featured AI systems and deployments, including Qwen3-8B hallucination detector and adaptive learning engines.');
+    }
+  }, []);
   return (
     <section id="projects" className="pt-32 pb-24 flex-1">
       <div className="px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">

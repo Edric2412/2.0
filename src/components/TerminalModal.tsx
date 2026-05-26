@@ -73,7 +73,7 @@ export function TerminalModal() {
           <div className="space-y-3 text-xs md:text-sm font-mono leading-relaxed mt-1">
             <h3 className="text-primary font-bold text-base">Edric Jeffrey Sam | AI/ML Engineer</h3>
             <p className="text-on-surface">
-              Currently pursuing a <span className="text-secondary font-bold">B.Sc. in Data Science</span> at Kumaraguru College of Liberal Arts and Science, Bharathiyar University (GPA: 8.2 / Duration: 2023 - 2026).
+              Currently pursuing a <span className="text-secondary font-bold">B.Sc. in Data Science</span> at Kumaraguru College of Liberal Arts and Science, Bharathiyar University (GPA: 8.13 / Duration: 2023 - 2026).
             </p>
             <p className="text-on-surface-variant">
               My engineering focus centers on developing reliable, production-grade intelligence systems: fine-tuning large language models, mitigating hallucinations, integrating knowledge graphs, and creating low-latency computer vision pipelines.
@@ -81,11 +81,15 @@ export function TerminalModal() {
             <div className="border-l-2 border-primary/40 pl-4 space-y-2 mt-2">
               <p className="font-bold text-secondary">Recent Internships:</p>
               <div>
-                <p className="text-on-surface font-semibold">1. Lysa Solutions — AI Engineer Intern (Oct '25 - Jan '26)</p>
+                <p className="text-on-surface font-semibold">1. Infotact Solutions — Gen AI Engineer Intern (Mar '26 - Present)</p>
+                <p className="text-on-surface-variant/80 text-[11px]">Led team of 4, built advanced RAG systems (Pinecone, Cohere Rerank-3, Nomic Atlas) and Agentic AI workflows (LangGraph, SSE Streaming).</p>
+              </div>
+              <div>
+                <p className="text-on-surface font-semibold">2. Lysa Solutions — AI Engineer Intern (Oct '25 - Jan '26)</p>
                 <p className="text-on-surface-variant/80 text-[11px]">Built OCR/LLM grading pipelines, centralized LLM Gateway, Celery/Redis workflows, and YAML prompt routing.</p>
               </div>
               <div>
-                <p className="text-on-surface font-semibold">2. OneYes Infotech Solutions — Data Analyst Intern (May '25 - Jun '25)</p>
+                <p className="text-on-surface font-semibold">3. OneYes Infotech Solutions — Data Analyst Intern (May '25 - Jun '25)</p>
                 <p className="text-on-surface-variant/80 text-[11px]">Engineered Streamlit pipelines for clustering models (K-Means, GMM) with Power BI evaluations.</p>
               </div>
             </div>
@@ -104,17 +108,22 @@ export function TerminalModal() {
             
             <div className="space-y-2">
               <p className="text-secondary font-bold">AI & Machine Learning:</p>
-              <p className="text-on-surface">NLP, RAG, Fine-Tuning (LoRA/QLoRA), Reinforcement Learning (PPO), YOLO, Computer Vision, OpenCV, Model Evaluation</p>
+              <p className="text-on-surface">NLP, RAG, Agentic AI, Fine-Tuning (LoRA/QLoRA), Reinforcement Learning (PPO), YOLO, Computer Vision, OpenCV, Model Evaluation</p>
             </div>
             
             <div className="space-y-2">
-              <p className="text-secondary font-bold">ML Frameworks & Vector DBs:</p>
-              <p className="text-on-surface">LangChain, Google Gen AI SDK, PyTorch, TensorFlow, scikit-learn, Hugging Face, Transformers, FAISS</p>
+              <p className="text-secondary font-bold">ML Frameworks & Libraries:</p>
+              <p className="text-on-surface">LangChain, LangGraph, Google Gen AI SDK, PyTorch, TensorFlow, scikit-learn, Hugging Face, Transformers, Nomic Atlas, DeepEval</p>
             </div>
 
             <div className="space-y-2">
               <p className="text-secondary font-bold">Data & Backend Systems:</p>
-              <p className="text-on-surface">Neo4j (Graph), Postgres, MySQL, MongoDB, FastAPI, Django, Celery, Redis, Node.js, WebSockets</p>
+              <p className="text-on-surface">Neo4j (Graph), Postgres, MySQL, MongoDB, FAISS, Pinecone, ChromaDB (Vector), FastAPI, Django, SSE Streaming, Node.js, WebSockets</p>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-secondary font-bold">MLOps & OS:</p>
+              <p className="text-on-surface">Docker (Containerization), Celery, Redis, Linux (Fedora)</p>
             </div>
           </div>
         );

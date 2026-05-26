@@ -104,6 +104,11 @@ export function Honors() {
   };
 
   useEffect(() => {
+    document.title = "Scholastic Honors & Records | Edric Jeffrey Sam";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'View academic achievements, merit scholarships, and professional certifications in Python, Web Development, and Business Analytics of Edric Jeffrey Sam.');
+    }
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize(); // Initialize
     window.addEventListener('resize', handleResize);
@@ -153,7 +158,7 @@ export function Honors() {
             <div className="accordion-container flex gap-2 md:gap-3 h-full w-full">
 
               {/* Item 1: Best Student Innovation */}
-              <div className="accordion-item relative overflow-hidden rounded-xl cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
+              <div className="accordion-item relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
                 <div className="absolute top-0 left-0 w-full h-[75%] overflow-hidden">
                   <img alt="Student Innovation" className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 dark:opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100" src="/honors/record-innovation.jpeg" />
                   <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-surface-container-low to-transparent"></div>
@@ -173,7 +178,7 @@ export function Honors() {
               </div>
 
               {/* Item 2: Inferential Statistics */}
-              <div className="accordion-item relative overflow-hidden rounded-xl cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
+              <div className="accordion-item relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
                 <div className="absolute top-0 left-0 w-full h-[75%] overflow-hidden">
                   <img alt="Statistics Data" className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 dark:opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" />
                   <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-surface-container-low to-transparent"></div>
@@ -193,7 +198,7 @@ export function Honors() {
               </div>
 
               {/* Item 3 */}
-              <div className="accordion-item relative overflow-hidden rounded-xl cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
+              <div className="accordion-item relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
                 <div className="absolute top-0 left-0 w-full h-[75%] overflow-hidden">
                   <img alt="Project Tech" className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 dark:opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100" src="/honors/record-project.jpeg" />
                   <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-surface-container-low to-transparent"></div>
@@ -213,7 +218,7 @@ export function Honors() {
               </div>
 
               {/* Item 4 */}
-              <div className="accordion-item relative overflow-hidden rounded-xl cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
+              <div className="accordion-item relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
                 <div className="absolute top-0 left-0 w-full h-[75%] overflow-hidden">
                   <img alt="Academic Hall" className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 dark:opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100" src="/honors/record-scholarship.jpeg" />
                   <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-surface-container-low to-transparent"></div>
@@ -233,7 +238,7 @@ export function Honors() {
               </div>
 
               {/* Item 5 */}
-              <div className="accordion-item relative overflow-hidden rounded-xl cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
+              <div className="accordion-item relative overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group bg-surface-container-low w-[20%]">
                 <div className="absolute top-0 left-0 w-full h-[75%] overflow-hidden">
                   <img alt="Collaboration" className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 dark:opacity-20 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-110 group-hover:scale-100" src="/honors/record-house.jpeg" />
                   <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-surface-container-low to-transparent"></div>
@@ -261,7 +266,7 @@ export function Honors() {
               return (
                 <div
                   key={index}
-                  className="rounded-2xl bg-surface-container-low w-full overflow-hidden cursor-pointer border border-outline/10 flex flex-col"
+                  className="rounded-lg bg-surface-container-low w-full overflow-hidden cursor-pointer border border-outline-variant/30 flex flex-col"
                   onClick={() => handleHonorClick(index)}
                 >
                   {/* Unified Image Header Area */}
@@ -280,7 +285,7 @@ export function Honors() {
 
                     {/* Expanded Overlay (Gradient & Close Button) */}
                     <div className={`absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                       <div className="absolute top-4 right-4 p-2 bg-surface-container-low/60 backdrop-blur-md rounded-full border border-white/10" onClick={(e) => { e.stopPropagation(); handleHonorClick(index); }}>
+                       <div className="absolute top-4 right-4 p-2 bg-surface-container-high rounded-lg border border-outline-variant/30 text-primary cursor-pointer hover:bg-surface-container-highest transition-colors" onClick={(e) => { e.stopPropagation(); handleHonorClick(index); }}>
                          <ChevronDown className="text-primary w-5 h-5 rotate-180" />
                        </div>
                     </div>
@@ -360,7 +365,7 @@ export function Honors() {
                       }}
                     >
                       {isCurrent && cert.link && cert.link !== "#" && (
-                        <div className="absolute top-6 right-6 z-20 p-2 md:p-2.5 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white hover:text-primary transition-colors duration-300 shadow-lg" title="View Certificate">
+                        <div className="absolute top-6 right-6 z-20 p-2 md:p-2.5 bg-surface-container-high rounded-full border border-outline-variant/30 text-on-surface hover:text-primary transition-colors duration-300 shadow-lg" title="View Certificate">
                           <ExternalLink className="w-4 h-4 md:w-5 md:h-5" />
                         </div>
                       )}
