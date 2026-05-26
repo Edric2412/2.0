@@ -136,7 +136,7 @@ export function TerminalModal() {
             <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
               <div className="flex justify-between items-start flex-wrap gap-2">
                 <span className="text-secondary font-bold">1. LLMOps Hallucination Detector</span>
-                <a href="https://github.com/Edric2412/LLM-QLoRA" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
+                <a href="https://github.com/Edric2412/LLM-QLoRA" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
                   GitHub <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -148,7 +148,7 @@ export function TerminalModal() {
             <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
               <div className="flex justify-between items-start flex-wrap gap-2">
                 <span className="text-secondary font-bold">2. Adaptive RAG Assessment Engine</span>
-                <a href="https://github.com/Edric2412/Q-A" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
+                <a href="https://github.com/Edric2412/Q-A" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
                   GitHub <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
@@ -160,7 +160,7 @@ export function TerminalModal() {
             <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
               <div className="flex justify-between items-start flex-wrap gap-2">
                 <span className="text-secondary font-bold">3. CareerCompass AI</span>
-                <a href="https://github.com/Edric2412/CareerCompass_AI" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
+                <a href="https://github.com/Edric2412/CareerCompass_AI" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
                   GitHub <ExternalLink className="w-3 h-3" />
                 </a>
               </div>

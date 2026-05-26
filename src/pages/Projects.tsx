@@ -73,10 +73,10 @@ export function Projects() {
                 ))}
               </div>
               <div className="flex gap-6">
-                <a className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface" href="https://github.com/Edric2412/LLM-QLoRA" target="_blank" rel="noreferrer">
+                <a className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface" href="https://github.com/Edric2412/LLM-QLoRA" target="_blank" rel="noopener noreferrer">
                   GitHub <ArrowRight className="w-4 h-4" />
                 </a>
-                <a className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface" href="https://huggingface.co/Edric2412/Qwen3-8B-Hallucination-Detector-LoRA" target="_blank" rel="noreferrer">
+                <a className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface" href="https://huggingface.co/Edric2412/Qwen3-8B-Hallucination-Detector-LoRA" target="_blank" rel="noopener noreferrer">
                   HuggingFace <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -105,7 +105,7 @@ export function Projects() {
               </div>
               <div className="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant/30">
                 <span className="text-[9px] font-mono text-on-surface-variant uppercase font-bold">Gemini • Neo4j • Docker</span>
-                <a href="https://github.com/Edric2412/Q-A" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
+                <a href="https://github.com/Edric2412/Q-A" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
                   <span className="text-xs font-bold uppercase tracking-widest">GitHub</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -134,7 +134,7 @@ export function Projects() {
               </p>
             </div>
             <div className="mt-auto">
-              <a href="https://github.com/Edric2412/CareerCompass_AI" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface">
+              <a href="https://github.com/Edric2412/CareerCompass_AI" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface">
                 View on GitHub <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -161,7 +161,7 @@ export function Projects() {
                 <FileText className="w-6 h-6 text-primary/70 hover:scale-110 transition-transform cursor-help" />
                 <Gauge className="w-6 h-6 text-primary hover:scale-110 transition-transform cursor-help" />
               </div>
-              <a href="https://github.com/Edric2412/Automated-Report-Generator" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
+              <a href="https://github.com/Edric2412/Automated-Report-Generator" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
                 <span className="text-xs font-bold uppercase tracking-widest">GitHub</span>
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -191,7 +191,7 @@ export function Projects() {
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                   97% STACKED LSTM ACCURACY
                 </div>
-                <a href="https://github.com/Edric2412/Realtime-Sign-Language-Detection-and-Translation-using-YOLO-" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
+                <a href="https://github.com/Edric2412/Realtime-Sign-Language-Detection-and-Translation-using-YOLO-" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:text-on-surface transition-colors">
                   <span className="text-xs font-bold uppercase tracking-widest">GitHub</span>
                   <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -221,7 +221,7 @@ export function Projects() {
               </div>
               <div className="flex-grow">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <a href="https://ijirt.org/article?manuscript=191950" target="_blank" rel="noreferrer" className="font-headline text-2xl font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-2">
+                  <a href="https://ijirt.org/article?manuscript=191950" target="_blank" rel="noopener noreferrer" className="font-headline text-2xl font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-2">
                     All-in-One RAG Assessment Engine: Dynamic Creation, Automated Evaluation, and University-Centric Output
                     <ExternalLink className="w-5 h-5 opacity-50" />
                   </a>
@@ -231,7 +231,7 @@ export function Projects() {
                   Published in Volume 12, Issue 8. Investigates dynamic creation and automated evaluation workflows within university settings using advanced RAG architectures.
                 </p>
                 <div className="flex flex-wrap items-center gap-6">
-                  <a className="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline flex items-center gap-2" href="https://ijirt.org/article?manuscript=191950" target="_blank" rel="noreferrer">
+                  <a className="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline flex items-center gap-2" href="https://ijirt.org/article?manuscript=191950" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4" /> Read Paper
                   </a>
                   <span className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-2">
@@ -258,7 +258,7 @@ export function Projects() {
               </div>
               <div className="flex-grow">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <a href="https://ieeexplore.ieee.org/document/11012174" target="_blank" rel="noreferrer" className="font-headline text-2xl font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-2">
+                  <a href="https://ieeexplore.ieee.org/document/11012174" target="_blank" rel="noopener noreferrer" className="font-headline text-2xl font-bold text-on-surface hover:text-primary transition-colors flex items-center gap-2">
                     Emerging Trends & Analytical Perspectives in the Development of New Smartphones
                     <ExternalLink className="w-5 h-5 opacity-50" />
                   </a>
@@ -268,7 +268,7 @@ export function Projects() {
                   Scopus Indexed. Presented at the 3rd International Conference on Advancements in Electrical, Electronics, Communication, Computing and Automation (ICAECA).
                 </p>
                 <div className="flex flex-wrap items-center gap-6">
-                  <a className="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline flex items-center gap-2" href="https://ieeexplore.ieee.org/document/11012174" target="_blank" rel="noreferrer">
+                  <a className="text-xs font-label uppercase tracking-widest text-primary font-bold hover:underline flex items-center gap-2" href="https://ieeexplore.ieee.org/document/11012174" target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="w-4 h-4" /> Read Paper
                   </a>
                   <span className="text-xs font-label uppercase tracking-widest text-on-surface-variant font-bold flex items-center gap-2">

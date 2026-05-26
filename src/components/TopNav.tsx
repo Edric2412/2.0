@@ -70,13 +70,13 @@ export function TopNav() {
           <div className="flex items-center gap-2 md:gap-6">
             {/* Desktop Socials */}
             <div className="hidden lg:flex items-center gap-4 border-r border-outline/20 pr-6 mr-1">
-              <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://github.com/Edric2412" target="_blank" rel="noreferrer" title="GitHub">
+              <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://github.com/Edric2412" target="_blank" rel="noopener noreferrer" title="GitHub">
                 <Github className="w-5 h-5" />
               </a>
-              <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://www.linkedin.com/in/edric-jeffrey-sam-52502927b/" target="_blank" rel="noreferrer" title="LinkedIn">
+              <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://www.linkedin.com/in/edric-jeffrey-sam-52502927b/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://huggingface.co/Edric2412" target="_blank" rel="noreferrer" title="Hugging Face">
+              <a className="text-primary hover:text-on-surface hover:scale-110 transition-all" href="https://huggingface.co/Edric2412" target="_blank" rel="noopener noreferrer" title="Hugging Face">
                 <Bot className="w-5 h-5" />
               </a>
             </div>
@@ -126,13 +126,13 @@ export function TopNav() {
 
             {/* Mobile Social Links */}
             <div className="flex items-center justify-center gap-6 mt-8 pt-8 border-t border-outline/10">
-              <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface rounded-full transition-colors" href="https://github.com/Edric2412" target="_blank" rel="noreferrer" title="GitHub">
+              <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface rounded-full transition-colors" href="https://github.com/Edric2412" target="_blank" rel="noopener noreferrer" title="GitHub">
                 <Github className="w-6 h-6" />
               </a>
-              <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface rounded-full transition-colors" href="https://www.linkedin.com/in/edric-jeffrey-sam-52502927b/" target="_blank" rel="noreferrer" title="LinkedIn">
+              <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface rounded-full transition-colors" href="https://www.linkedin.com/in/edric-jeffrey-sam-52502927b/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface hover:scale-110 rounded-full transition-all" href="https://huggingface.co/Edric2412" target="_blank" rel="noreferrer" title="Hugging Face">
+              <a className="p-3 text-primary hover:bg-surface-container-high hover:text-on-surface hover:scale-110 rounded-full transition-all" href="https://huggingface.co/Edric2412" target="_blank" rel="noopener noreferrer" title="Hugging Face">
                 <Bot className="w-6 h-6" />
               </a>
             </div>
