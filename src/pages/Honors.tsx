@@ -276,7 +276,7 @@ export function Honors() {
                       src={honor.image}
                       className={`w-full h-full object-cover transition-all duration-700 ${isActive ? 'grayscale-0 opacity-100 scale-100' : 'grayscale opacity-20 scale-105'}`}
                     />
-                    
+
                     {/* Collapsed Overlay (Title) */}
                     <div className={`absolute inset-0 flex items-center justify-between px-6 z-10 transition-opacity duration-500 ${isActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                       <span className="font-headline text-sm font-bold text-primary uppercase tracking-widest truncate pr-3">{honor.title}</span>
@@ -285,9 +285,9 @@ export function Honors() {
 
                     {/* Expanded Overlay (Gradient & Close Button) */}
                     <div className={`absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                       <div className="absolute top-4 right-4 p-2 bg-surface-container-high rounded-lg border border-outline-variant/30 text-primary cursor-pointer hover:bg-surface-container-highest transition-colors" onClick={(e) => { e.stopPropagation(); handleHonorClick(index); }}>
-                         <ChevronDown className="text-primary w-5 h-5 rotate-180" />
-                       </div>
+                      <div className="absolute top-4 right-4 p-2 bg-surface-container-high rounded-lg border border-outline-variant/30 text-primary cursor-pointer hover:bg-surface-container-highest transition-colors" onClick={(e) => { e.stopPropagation(); handleHonorClick(index); }}>
+                        <ChevronDown className="text-primary w-5 h-5 rotate-180" />
+                      </div>
                     </div>
                   </div>
 
@@ -302,8 +302,8 @@ export function Honors() {
                         <h3 className="font-headline text-2xl font-bold text-on-surface leading-tight">{honor.title}</h3>
                         <p className="text-sm text-on-surface-variant mt-4 leading-relaxed font-medium">{honor.description}</p>
                         <div className="flex justify-between items-end mt-8">
-                           <honor.icon className="text-primary w-10 h-10" />
-                           <span className="text-[10px] font-mono text-outline uppercase font-bold tracking-tighter">Scholastic Milestone</span>
+                          <honor.icon className="text-primary w-10 h-10" />
+                          <span className="text-[10px] font-mono text-outline uppercase font-bold tracking-tighter">Scholastic Milestone</span>
                         </div>
                       </div>
                     </div>
@@ -319,7 +319,7 @@ export function Honors() {
         {/* Certifications Section */}
         <section className="max-w-screen-2xl mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-outline/10 relative overflow-visible">
           <div className="grid grid-cols-1 xl:grid-cols-12 items-center gap-16 xl:gap-12">
-            
+
             {/* Card Stack Area (Left Side on Desktop) */}
             <div className="xl:col-span-7 2xl:col-span-8 order-2 xl:order-1 relative w-full flex flex-col items-center min-h-[380px] sm:min-h-[420px]">
               {/* Interactive Curved Card Stack */}
@@ -427,7 +427,7 @@ export function Honors() {
             <div className="xl:col-span-5 2xl:col-span-4 text-center xl:text-left space-y-4 md:space-y-6 relative z-30 order-1 xl:order-2 mb-8 xl:mb-0">
               <span className="font-label text-primary tracking-[0.25em] text-xs md:text-sm uppercase font-semibold">Professional Validations</span>
               <h2 className="font-headline text-5xl md:text-6xl xl:text-7xl font-bold leading-[1] tracking-tighter text-on-surface">
-                Global <br className="hidden xl:block"/><span className="text-primary/80">Certifications</span>.
+                Global <br className="hidden xl:block" /><span className="text-primary/80">Certifications</span>.
               </h2>
               <p className="font-body text-base md:text-lg text-on-surface-variant leading-relaxed max-w-lg mx-auto xl:mx-0 pt-4 md:pt-6">
                 A curated showcase of industry-recognized certifications and professional credentials. These technical milestones reflect a continuous, rigorous dedication to mastering modern technologies, secure cloud architectures, and advanced data-driven analytics.
