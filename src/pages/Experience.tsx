@@ -110,11 +110,10 @@ function ImageLightbox({ images, activeIndex, isOpen, onClose, title }: ImageLig
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`w-12 h-12 md:w-16 md:h-16 rounded-md overflow-hidden border-2 transition-all duration-300 bg-black/40 cursor-pointer ${
-                  idx === currentIndex
-                    ? 'border-primary scale-110 shadow-[0_0_12px_var(--color-primary)]'
-                    : 'border-outline-variant/30 opacity-60 hover:opacity-100 hover:scale-105'
-                }`}
+                className={`w-12 h-12 md:w-16 md:h-16 rounded-md overflow-hidden border-2 transition-all duration-300 bg-black/40 cursor-pointer ${idx === currentIndex
+                  ? 'border-primary scale-110 shadow-[0_0_12px_var(--color-primary)]'
+                  : 'border-outline-variant/30 opacity-60 hover:opacity-100 hover:scale-105'
+                  }`}
               >
                 <img src={img} className="w-full h-full object-cover" alt="" />
               </button>
@@ -218,7 +217,7 @@ export function Experience() {
 
         {/* Bento Grid Layout - Combining Experience and Academics */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-          
+
           {/* 1. Infotact Solutions (Gen AI Intern) Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -493,19 +492,17 @@ export function Experience() {
 
                     {/* Mobile Tab Switcher */}
                     <div className="flex lg:hidden bg-surface-container-high border border-outline-variant/30 p-0.5 rounded-lg w-fit mb-1">
-                      <button 
+                      <button
                         onClick={(e) => { e.stopPropagation(); setActiveTabs(prev => ({ ...prev, brigade: 'photos' })); }}
-                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${
-                          activeTabs.brigade === 'photos' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
-                        }`}
+                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${activeTabs.brigade === 'photos' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
+                          }`}
                       >
                         Photos
                       </button>
-                      <button 
+                      <button
                         onClick={(e) => { e.stopPropagation(); setActiveTabs(prev => ({ ...prev, brigade: 'details' })); }}
-                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${
-                          activeTabs.brigade === 'details' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
-                        }`}
+                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${activeTabs.brigade === 'details' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
+                          }`}
                       >
                         Details
                       </button>
@@ -515,15 +512,14 @@ export function Experience() {
                   {/* Photo Grid Container */}
                   <div className="relative overflow-hidden rounded-lg transition-all duration-300 group/grid w-full max-w-[280px] mx-auto">
                     {/* Images Bento Grid */}
-                    <div className={`w-full transition-all duration-500 flex flex-col gap-1.5 ${
-                      activeTabs.brigade === 'details' 
-                        ? 'brightness-[0.75] opacity-[0.85] dark:brightness-[0.3] dark:opacity-[0.9] scale-[0.98]' 
-                        : 'lg:group-hover/card:brightness-[0.75] lg:group-hover/card:opacity-[0.85] dark:lg:group-hover/card:brightness-[0.3] dark:lg:group-hover/card:opacity-[0.9] lg:group-hover/card:scale-[1.01]'
-                    }`}>
+                    <div className={`w-full transition-all duration-500 flex flex-col gap-1.5 ${activeTabs.brigade === 'details'
+                      ? 'brightness-[0.75] opacity-[0.85] dark:brightness-[0.3] dark:opacity-[0.9] scale-[0.98]'
+                      : 'lg:group-hover/card:brightness-[0.75] lg:group-hover/card:opacity-[0.85] dark:lg:group-hover/card:brightness-[0.3] dark:lg:group-hover/card:opacity-[0.9] lg:group-hover/card:scale-[1.01]'
+                      }`}>
                       {/* Row 1: Portrait + Square */}
                       <div className="grid grid-cols-[0.707fr_1fr] gap-1.5 w-full">
                         {/* Photo 1 (Portrait - aspect 1131/1599) */}
-                        <div 
+                        <div
                           className="w-full aspect-[1131/1599] overflow-hidden rounded-lg cursor-pointer"
                           onClick={() => handleCardInteraction('brigade', 0, brigadeImages, "Brigade Lead — IGNITE 2025")}
                         >
@@ -534,7 +530,7 @@ export function Experience() {
                           />
                         </div>
                         {/* Photo 3 (Square - aspect 1:1) */}
-                        <div 
+                        <div
                           className="w-full aspect-square overflow-hidden rounded-lg cursor-pointer"
                           onClick={() => handleCardInteraction('brigade', 2, brigadeImages, "Brigade Lead — IGNITE 2025")}
                         >
@@ -546,7 +542,7 @@ export function Experience() {
                         </div>
                       </div>
                       {/* Row 2: Landscape (aspect 3761/3008, i.e. 1.25) */}
-                      <div 
+                      <div
                         className="w-full aspect-[3761/3008] overflow-hidden rounded-lg cursor-pointer"
                         onClick={() => handleCardInteraction('brigade', 1, brigadeImages, "Brigade Lead — IGNITE 2025")}
                       >
@@ -559,10 +555,9 @@ export function Experience() {
                     </div>
 
                     {/* Hover Overlay */}
-                    <div 
-                      className={`absolute inset-0 bg-purple-50 dark:bg-purple-950 flex flex-col justify-between p-4 transition-all duration-300 border border-purple-300/50 dark:border-purple-900/50 rounded-lg cursor-pointer ${
-                        activeTabs.brigade === 'details' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none lg:group-hover/card:opacity-100 lg:group-hover/card:pointer-events-auto'
-                      }`}
+                    <div
+                      className={`absolute inset-0 bg-purple-50 dark:bg-purple-950 flex flex-col justify-between p-4 transition-all duration-300 border border-purple-300/50 dark:border-purple-900/50 rounded-lg cursor-pointer ${activeTabs.brigade === 'details' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none lg:group-hover/card:opacity-100 lg:group-hover/card:pointer-events-auto'
+                        }`}
                       onClick={() => handleOpenLightbox(brigadeImages, 0, "Brigade Lead — IGNITE 2025")}
                     >
                       <div className="space-y-2">
@@ -618,19 +613,17 @@ export function Experience() {
 
                     {/* Mobile Tab Switcher */}
                     <div className="flex lg:hidden bg-surface-container-high border border-outline-variant/30 p-0.5 rounded-lg w-fit mb-1">
-                      <button 
+                      <button
                         onClick={(e) => { e.stopPropagation(); setActiveTabs(prev => ({ ...prev, rotaract: 'photos' })); }}
-                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${
-                          activeTabs.rotaract === 'photos' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
-                        }`}
+                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${activeTabs.rotaract === 'photos' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
+                          }`}
                       >
                         Photos
                       </button>
-                      <button 
+                      <button
                         onClick={(e) => { e.stopPropagation(); setActiveTabs(prev => ({ ...prev, rotaract: 'details' })); }}
-                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${
-                          activeTabs.rotaract === 'details' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
-                        }`}
+                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${activeTabs.rotaract === 'details' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
+                          }`}
                       >
                         Details
                       </button>
@@ -640,13 +633,12 @@ export function Experience() {
                   {/* Photo Grid Container */}
                   <div className="relative overflow-hidden rounded-lg transition-all duration-300 group/grid w-full max-w-[280px] mx-auto">
                     {/* Images Bento Grid */}
-                    <div className={`w-full transition-all duration-500 flex flex-col gap-1.5 ${
-                      activeTabs.rotaract === 'details' 
-                        ? 'brightness-[0.75] opacity-[0.85] dark:brightness-[0.3] dark:opacity-[0.9] scale-[0.98]' 
-                        : 'lg:group-hover/card:brightness-[0.75] lg:group-hover/card:opacity-[0.85] dark:lg:group-hover/card:brightness-[0.3] dark:lg:group-hover/card:opacity-[0.9] lg:group-hover/card:scale-[1.01]'
-                    }`}>
+                    <div className={`w-full transition-all duration-500 flex flex-col gap-1.5 ${activeTabs.rotaract === 'details'
+                      ? 'brightness-[0.75] opacity-[0.85] dark:brightness-[0.3] dark:opacity-[0.9] scale-[0.98]'
+                      : 'lg:group-hover/card:brightness-[0.75] lg:group-hover/card:opacity-[0.85] dark:lg:group-hover/card:brightness-[0.3] dark:lg:group-hover/card:opacity-[0.9] lg:group-hover/card:scale-[1.01]'
+                      }`}>
                       {/* Row 1: Landscape */}
-                      <div 
+                      <div
                         className="w-full aspect-[3744/2496] overflow-hidden rounded-lg cursor-pointer"
                         onClick={() => handleCardInteraction('rotaract', 1, rotaractImages, "CSR Project Chair")}
                       >
@@ -659,7 +651,7 @@ export function Experience() {
                       {/* Row 2: Portrait + Square (Rotaract3 cropped to 1:1) */}
                       <div className="grid grid-cols-[0.714fr_1fr] gap-1.5 w-full">
                         {/* Photo 2 (Portrait - aspect 2729/3822) */}
-                        <div 
+                        <div
                           className="w-full aspect-[2729/3822] overflow-hidden rounded-lg cursor-pointer"
                           onClick={() => handleCardInteraction('rotaract', 0, rotaractImages, "CSR Project Chair")}
                         >
@@ -670,7 +662,7 @@ export function Experience() {
                           />
                         </div>
                         {/* Photo 3 (Square - aspect 1:1) */}
-                        <div 
+                        <div
                           className="w-full aspect-square overflow-hidden rounded-lg cursor-pointer"
                           onClick={() => handleCardInteraction('rotaract', 2, rotaractImages, "CSR Project Chair")}
                         >
@@ -684,10 +676,9 @@ export function Experience() {
                     </div>
 
                     {/* Hover Overlay */}
-                    <div 
-                      className={`absolute inset-0 bg-purple-50 dark:bg-purple-950 flex flex-col justify-between p-4 transition-all duration-300 border border-purple-300/50 dark:border-purple-900/50 rounded-lg cursor-pointer ${
-                        activeTabs.rotaract === 'details' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none lg:group-hover/card:opacity-100 lg:group-hover/card:pointer-events-auto'
-                      }`}
+                    <div
+                      className={`absolute inset-0 bg-purple-50 dark:bg-purple-950 flex flex-col justify-between p-4 transition-all duration-300 border border-purple-300/50 dark:border-purple-900/50 rounded-lg cursor-pointer ${activeTabs.rotaract === 'details' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none lg:group-hover/card:opacity-100 lg:group-hover/card:pointer-events-auto'
+                        }`}
                       onClick={() => handleOpenLightbox(rotaractImages, 0, "CSR Project Chair")}
                     >
                       <div className="space-y-2">
@@ -743,19 +734,17 @@ export function Experience() {
 
                     {/* Mobile Tab Switcher */}
                     <div className="flex lg:hidden bg-surface-container-high border border-outline-variant/30 p-0.5 rounded-lg w-fit mb-1">
-                      <button 
+                      <button
                         onClick={(e) => { e.stopPropagation(); setActiveTabs(prev => ({ ...prev, developer: 'photos' })); }}
-                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${
-                          activeTabs.developer === 'photos' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
-                        }`}
+                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${activeTabs.developer === 'photos' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
+                          }`}
                       >
                         Photos
                       </button>
-                      <button 
+                      <button
                         onClick={(e) => { e.stopPropagation(); setActiveTabs(prev => ({ ...prev, developer: 'details' })); }}
-                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${
-                          activeTabs.developer === 'details' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
-                        }`}
+                        className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-300 cursor-pointer ${activeTabs.developer === 'details' ? 'bg-primary text-white shadow-sm' : 'text-on-surface-variant'
+                          }`}
                       >
                         Details
                       </button>
@@ -765,13 +754,12 @@ export function Experience() {
                   {/* Photo Grid Container */}
                   <div className="relative overflow-hidden rounded-lg transition-all duration-300 group/grid w-full max-w-[280px] mx-auto">
                     {/* Images Bento Grid */}
-                    <div className={`w-full transition-all duration-500 flex flex-col gap-1.5 ${
-                      activeTabs.developer === 'details' 
-                        ? 'brightness-[0.75] opacity-[0.85] dark:brightness-[0.3] dark:opacity-[0.9] scale-[0.98]' 
-                        : 'lg:group-hover/card:brightness-[0.75] lg:group-hover/card:opacity-[0.85] dark:lg:group-hover/card:brightness-[0.3] dark:lg:group-hover/card:opacity-[0.9] lg:group-hover/card:scale-[1.01]'
-                    }`}>
+                    <div className={`w-full transition-all duration-500 flex flex-col gap-1.5 ${activeTabs.developer === 'details'
+                      ? 'brightness-[0.75] opacity-[0.85] dark:brightness-[0.3] dark:opacity-[0.9] scale-[0.98]'
+                      : 'lg:group-hover/card:brightness-[0.75] lg:group-hover/card:opacity-[0.85] dark:lg:group-hover/card:brightness-[0.3] dark:lg:group-hover/card:opacity-[0.9] lg:group-hover/card:scale-[1.01]'
+                      }`}>
                       {/* Photo 1 (Portrait cropped to 4:3) */}
-                      <div 
+                      <div
                         className="w-full aspect-[4/3] overflow-hidden rounded-lg cursor-pointer"
                         onClick={() => handleCardInteraction('developer', 0, developerImages, "Lead Project Developer")}
                       >
@@ -782,7 +770,7 @@ export function Experience() {
                         />
                       </div>
                       {/* Photo 2 (Landscape - aspect 1280/960) */}
-                      <div 
+                      <div
                         className="w-full aspect-[1280/960] overflow-hidden rounded-lg cursor-pointer"
                         onClick={() => handleCardInteraction('developer', 1, developerImages, "Lead Project Developer")}
                       >
@@ -795,10 +783,9 @@ export function Experience() {
                     </div>
 
                     {/* Hover Overlay */}
-                    <div 
-                      className={`absolute inset-0 bg-purple-50 dark:bg-purple-950 flex flex-col justify-between p-4 transition-all duration-300 border border-purple-300/50 dark:border-purple-900/50 rounded-lg cursor-pointer ${
-                        activeTabs.developer === 'details' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none lg:group-hover/card:opacity-100 lg:group-hover/card:pointer-events-auto'
-                      }`}
+                    <div
+                      className={`absolute inset-0 bg-purple-50 dark:bg-purple-950 flex flex-col justify-between p-4 transition-all duration-300 border border-purple-300/50 dark:border-purple-900/50 rounded-lg cursor-pointer ${activeTabs.developer === 'details' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none lg:group-hover/card:opacity-100 lg:group-hover/card:pointer-events-auto'
+                        }`}
                       onClick={() => handleOpenLightbox(developerImages, 0, "Lead Project Developer")}
                     >
                       <div className="space-y-2">

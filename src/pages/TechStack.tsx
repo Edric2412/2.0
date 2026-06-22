@@ -68,7 +68,7 @@ export function TechStack() {
                 <div>
                   <h3 className="font-headline text-xs font-bold uppercase tracking-widest mb-3 text-primary-container">Intelligence & NLP</h3>
                   <div className="flex flex-wrap gap-2">
-                    {['NLP', 'BERT', 'RAG', 'Agentic AI', 'Generative AI', 'LoRA/QLoRA', 'Reinforcement Learning (PPO)'].map(skill => (
+                    {['NLP', 'BERT', 'RAG', 'Agentic AI', 'Generative AI', 'LoRA/QLoRA', 'Gemma 4', 'Reinforcement Learning (PPO)'].map(skill => (
                       <span key={skill} className="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-medium border border-outline-variant/30">{skill}</span>
                     ))}
                   </div>
@@ -86,7 +86,7 @@ export function TechStack() {
                 <div>
                   <h3 className="font-headline text-xs font-bold uppercase tracking-widest mb-3 text-on-surface">Evaluation & Cognition</h3>
                   <div className="flex flex-wrap gap-2">
-                    {['Model Evaluation', 'Hallucination Detection', 'Bayesian Knowledge Tracing'].map(skill => (
+                    {['Model Evaluation', 'Hallucination Detection', 'Dual-Model Consensus', 'Bayesian Knowledge Tracing'].map(skill => (
                       <span key={skill} className="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-medium border border-outline-variant/30">{skill}</span>
                     ))}
                   </div>
@@ -152,7 +152,7 @@ export function TechStack() {
             <h2 className="font-headline text-xl font-bold uppercase tracking-tight text-on-surface">ML Frameworks & Libraries</h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            {['Langchain', 'LangGraph', 'Google Gen AI SDK', 'scikit-learn', 'Tensorflow', 'Pytorch', 'Hugging Face', 'Nomic Atlas', 'DeepEval', 'Gymnasium', 'Stable-Baselines3', 'Transformers'].map(fw => (
+            {['Langchain', 'LangGraph', 'Google Gen AI SDK', 'scikit-learn', 'Tensorflow', 'Pytorch', 'Hugging Face', 'Nomic Atlas', 'DeepEval', 'vLLM', 'DuckDB', 'Gymnasium', 'Stable-Baselines3', 'Transformers'].map(fw => (
               <div key={fw} className="flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-sm border border-outline-variant/30 hover:border-primary/50 transition-colors">
                 <span className="text-xs font-semibold text-on-surface">{fw}</span>
               </div>
@@ -173,7 +173,7 @@ export function TechStack() {
             <h2 className="font-headline text-xl font-bold text-on-surface">Backend & API</h2>
           </div>
           <div className="flex flex-wrap gap-2">
-            {['FastAPI', 'Django', 'Node.js', 'Express.js', 'SSE Streaming', 'Rest APIs', 'WebSockets', 'ngrok'].map(tech => (
+            {['FastAPI', 'Redpanda (Kafka)', 'Django', 'Node.js', 'Express.js', 'SSE Streaming', 'Rest APIs', 'WebSockets', 'ngrok'].map(tech => (
               <span key={tech} className="text-xs font-bold bg-surface-container-highest px-2 py-1 text-on-surface border border-primary/10">{tech}</span>
             ))}
           </div>
@@ -193,7 +193,7 @@ export function TechStack() {
           </div>
           <div className="space-y-3">
             <div className="flex justify-between items-center text-sm">
-              <span className="text-on-surface font-medium">MongoDB / MySQL / Postgres</span>
+              <span className="text-on-surface font-medium">MongoDB / MySQL / Postgres / Parquet (S3)</span>
               <span className="text-[10px] font-mono text-primary font-bold">RELATIONAL/DOC</span>
             </div>
             <div className="flex justify-between items-center text-sm">
@@ -221,10 +221,10 @@ export function TechStack() {
           </div>
           <div className="grid grid-cols-2 gap-2">
             {[
-              { label: 'Compute', val: 'Docker' },
-              { label: 'Pipeline', val: 'Celery' },
-              { label: 'Cache', val: 'Redis' },
-              { label: 'Orchestrator', val: 'Async Proc' }
+              { label: 'Compute / Orch', val: 'Docker / K3s' },
+              { label: 'Infrastructure', val: 'Terraform' },
+              { label: 'Telemetry', val: 'OpenTelemetry' },
+              { label: 'Monitoring', val: 'Prom & Grafana' }
             ].map(item => (
               <div key={item.label} className="p-2 bg-surface-container-lowest border border-outline-variant/20 text-center">
                 <span className="text-[9px] block uppercase tracking-tighter mb-1 text-on-surface-variant font-bold">{item.label}</span>
@@ -235,7 +235,15 @@ export function TechStack() {
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="text-[10px] font-bold bg-primary-container/20 text-primary border border-primary-container/30 px-2 py-0.5">LLM Inference Pipelines</span>
             <span className="text-[10px] font-bold bg-primary-container/20 text-primary border border-primary-container/30 px-2 py-0.5">Containerization</span>
-            <span className="text-[10px] font-bold bg-primary-container/20 text-primary border border-primary-container/30 px-2 py-0.5">Model Monitoring</span>
+            <span className="text-[10px] font-bold bg-primary-container/20 text-primary border border-primary-container/30 px-2 py-0.5">Kafka Lag & Observability</span>
+          </div>
+          <div className="mt-6 pt-6 border-t border-outline-variant/20">
+            <h3 className="font-headline text-[11px] font-bold uppercase tracking-widest mb-3 text-primary">Testing & Code Quality</h3>
+            <div className="flex flex-wrap gap-2">
+              {['GitHub Actions', 'Pytest', 'Ruff'].map(skill => (
+                <span key={skill} className="px-2 py-1 bg-surface-container text-on-surface text-[11px] font-medium border border-outline-variant/30">{skill}</span>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -259,7 +267,7 @@ export function TechStack() {
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase text-primary-container font-black tracking-widest mb-1">Enterprise</span>
-                <span className="font-bold text-sm text-on-surface">Microsoft Azure</span>
+                <span className="font-bold text-sm text-on-surface">AWS (EC2, S3, Lambda, ECR) / Microsoft Azure</span>
               </div>
             </div>
           </div>

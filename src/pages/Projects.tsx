@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { BrainCircuit, ArrowRight, ExternalLink, Compass, FileText, Gauge, Hash, CheckCircle, GraduationCap } from 'lucide-react';
+import { BrainCircuit, ArrowRight, ExternalLink, Compass, FileText, Gauge, Hash, CheckCircle, GraduationCap, Server } from 'lucide-react';
 
 export function Projects() {
   useEffect(() => {
     document.title = "Featured Projects | Edric Jeffrey Sam";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Browse featured AI systems and deployments, including Qwen3-8B hallucination detector and adaptive learning engines.');
+      metaDesc.setAttribute('content', 'Browse featured AI systems and deployments, including SyncOps AI event-driven agent, Qwen3-8B hallucination detector and adaptive learning engines.');
     }
   }, []);
   return (
@@ -45,7 +45,43 @@ export function Projects() {
 
         {/* Featured Projects Bento Grid */}
         <section className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-32">
-          {/* Project 1: LLMOps (Featured) */}
+          {/* Project 1: SyncOps AI (Featured) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="md:col-span-12 lg:col-span-12 group relative overflow-hidden bg-surface-container-low p-8 rounded-lg border-l-4 border-primary hover:-translate-y-1 transition-all duration-300 amethyst-glow"
+          >
+            <div className="absolute top-0 right-0 p-8 opacity-5">
+              <Server className="w-32 h-32 text-primary" />
+            </div>
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="px-2 py-1 text-[10px] font-bold bg-primary/20 text-on-surface border border-primary/40 tracking-widest uppercase">June 2026</span>
+                <span className="px-2 py-1 text-[10px] font-bold bg-surface text-on-surface-variant border border-outline-variant/30 tracking-widest uppercase">Event-Driven Agent</span>
+              </div>
+              <h3 className="font-headline text-3xl font-bold text-on-surface mb-4">SyncOps AI — Event-Driven Enterprise Agent for Support & Order Fulfillment</h3>
+              <ul className="text-on-surface-variant mb-8 space-y-2 text-sm md:text-base font-medium">
+                <li className="flex gap-2"><span className="text-primary">•</span> Architected an event-driven LLM platform using FastAPI and Redpanda (Apache Kafka) on AWS EC2 K3s Kubernetes clusters provisioned via Terraform with an idempotent 3-attempt tool execution loop.</li>
+                <li className="flex gap-2"><span className="text-primary">•</span> Engineered a dual-model consensus verification gate pairing Gemini 3.1 Flash-Lite with local Ollama Gemma 4 (via vLLM) to intercept tool hallucinations and writes.</li>
+                <li className="flex gap-2"><span className="text-primary">•</span> Designed serverless ticket ingestion via AWS Lambda/S3 and queryable structured trace warehousing with Parquet and DuckDB.</li>
+                <li className="flex gap-2"><span className="text-primary">•</span> Instrumented OpenTelemetry, Prometheus, and Grafana monitoring; set up GitHub Actions CI/CD with Ruff and 80%+ Pytest coverage.</li>
+              </ul>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {['FastAPI', 'Redpanda (Kafka)', 'Terraform', 'K3s (Kubernetes)', 'Gemini 3.1', 'Gemma 4 (vLLM)', 'DuckDB & Parquet', 'Prometheus & Grafana', 'OpenTelemetry', 'CI/CD'].map(tag => (
+                  <span key={tag} className="text-xs font-mono text-primary px-2 py-1 bg-surface-container-lowest border border-primary/20 font-bold">{tag}</span>
+                ))}
+              </div>
+              <div className="flex gap-6">
+                <a className="inline-flex items-center gap-2 text-primary font-headline font-bold group-hover:gap-3 transition-all hover:text-on-surface" href="https://github.com/Edric2412/AWS1" target="_blank" rel="noreferrer">
+                  GitHub <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Project 2: LLMOps (Featured) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +119,7 @@ export function Projects() {
             </div>
           </motion.div>
 
-          {/* Project 2: RAG Assessment */}
+          {/* Project 3: RAG Assessment */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +149,7 @@ export function Projects() {
             </div>
           </motion.div>
 
-          {/* Project 3: CareerCompass AI */}
+          {/* Project 4: CareerCompass AI */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +176,7 @@ export function Projects() {
             </div>
           </motion.div>
 
-          {/* Project 4: Event Report Gen */}
+          {/* Project 5: Event Report Gen */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +204,7 @@ export function Projects() {
             </div>
           </motion.div>
 
-          {/* Project 5: Sign Language Detection */}
+          {/* Project 6: Sign Language Detection */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -61,7 +61,7 @@ export function Home() {
                 <Quote className="w-16 h-16" />
               </div>
               <p className="text-sm md:text-base text-on-surface leading-relaxed font-body italic">
-                "AI/ML Engineer focused on Large Language Models, RAG systems, and AI reliability engineering. Experienced in fine-tuning and evaluating LLMs (QLoRA, LoRA) and building production AI systems integrating FastAPI, React, Docker, and cloud infrastructure. Developed end-to-end AI platforms including hallucination detection pipelines, adaptive learning engines using reinforcement learning, and multimodal GenAI applications. Passionate about building scalable and trustworthy AI systems for real-world deployment."
+                "AI/ML & GenAI Engineer focused on building robust, event-driven enterprise agents, production RAG systems, and scalable LLM platforms. Experienced in leading GenAI projects, coordinating workflows with LangGraph, and provisioning high-availability K3s Kubernetes clusters on AWS via Terraform. Architected event-driven architectures using FastAPI and Redpanda (Kafka), engineered dual-model consensus verification gates (Gemini 3.1 & Gemma 4) to intercept hallucinations on critical writes, and established high-performance data warehousing queryable via DuckDB. Passionate about building highly reliable, observable, and fully automated AI platforms."
               </p>
             </motion.div>
 
@@ -149,7 +149,7 @@ export function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
           {[
             { num: '03', label: 'Internships', sub: 'Industry Proven' },
-            { num: '05', label: 'Projects', sub: 'Full-Stack AI' },
+            { num: '06', label: 'Projects', sub: 'Full-Stack AI' },
             { num: '02', label: 'Publications', sub: 'IEEE/CVPR Core' },
             { num: 'BEST FYP', label: 'Academic Excellence', sub: 'Award Winner', textClass: 'text-3xl leading-tight' },
             { num: 'ACHIEVER', label: 'Best Student Innovation Award ', sub: 'Achievers Award \'26', textClass: 'text-2xl leading-tight' }

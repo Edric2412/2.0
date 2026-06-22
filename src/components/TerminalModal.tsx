@@ -100,7 +100,6 @@ export function TerminalModal() {
         output = (
           <div className="space-y-4 text-xs md:text-sm font-mono mt-1">
             <h3 className="text-primary font-bold text-base">Technical Competencies</h3>
-            
             <div className="space-y-2">
               <p className="text-secondary font-bold">Languages:</p>
               <p className="text-on-surface">Python, JavaScript, R, SQL, C/C++</p>
@@ -108,22 +107,27 @@ export function TerminalModal() {
             
             <div className="space-y-2">
               <p className="text-secondary font-bold">AI & Machine Learning:</p>
-              <p className="text-on-surface">NLP, RAG, Agentic AI, Fine-Tuning (LoRA/QLoRA), Reinforcement Learning (PPO), YOLO, Computer Vision, OpenCV, Model Evaluation</p>
+              <p className="text-on-surface">NLP, RAG, Agentic AI, Fine-Tuning (LoRA/QLoRA), Reinforcement Learning (PPO), YOLO, Computer Vision, OpenCV, Model Evaluation, Dual-Model Consensus</p>
             </div>
             
             <div className="space-y-2">
               <p className="text-secondary font-bold">ML Frameworks & Libraries:</p>
-              <p className="text-on-surface">LangChain, LangGraph, Google Gen AI SDK, PyTorch, TensorFlow, scikit-learn, Hugging Face, Transformers, Nomic Atlas, DeepEval</p>
+              <p className="text-on-surface">LangChain, LangGraph, Google Gen AI SDK, PyTorch, TensorFlow, scikit-learn, Hugging Face, Transformers, Nomic Atlas, DeepEval, vLLM, DuckDB</p>
             </div>
 
             <div className="space-y-2">
               <p className="text-secondary font-bold">Data & Backend Systems:</p>
-              <p className="text-on-surface">Neo4j (Graph), Postgres, MySQL, MongoDB, FAISS, Pinecone, ChromaDB (Vector), FastAPI, Django, SSE Streaming, Node.js, WebSockets</p>
+              <p className="text-on-surface">Neo4j (Graph), Postgres, MySQL, MongoDB, FAISS, Pinecone, ChromaDB (Vector), Parquet (S3), FastAPI, Redpanda (Kafka), Django, SSE Streaming, Node.js, WebSockets</p>
             </div>
 
             <div className="space-y-2">
               <p className="text-secondary font-bold">MLOps & OS:</p>
-              <p className="text-on-surface">Docker (Containerization), Celery, Redis, Linux (Fedora)</p>
+              <p className="text-on-surface">Docker (Containerization / K3s), Terraform, OpenTelemetry, Prometheus, Grafana, Celery, Redis, Linux (Fedora)</p>
+            </div>
+
+            <div className="space-y-2">
+              <p className="text-secondary font-bold">Testing & Code Quality:</p>
+              <p className="text-on-surface">GitHub Actions (CI/CD), Pytest (Unit Testing), Ruff (Linting)</p>
             </div>
           </div>
         );
@@ -135,7 +139,19 @@ export function TerminalModal() {
 
             <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
               <div className="flex justify-between items-start flex-wrap gap-2">
-                <span className="text-secondary font-bold">1. LLMOps Hallucination Detector</span>
+                <span className="text-secondary font-bold">1. SyncOps AI — Event-Driven Enterprise Agent</span>
+                <a href="https://github.com/Edric2412/AWS1" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
+                  GitHub <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+              <p className="text-on-surface-variant mt-1 text-[11px] md:text-xs">
+                Event-driven support & order fulfillment LLM platform on AWS EC2 K3s Kubernetes, with dual-model consensus verification (Gemini 3.1 & Gemma 4).
+              </p>
+            </div>
+
+            <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <span className="text-secondary font-bold">2. LLMOps Hallucination Detector</span>
                 <a href="https://github.com/Edric2412/LLM-QLoRA" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
                   GitHub <ExternalLink className="w-3 h-3" />
                 </a>
@@ -147,7 +163,7 @@ export function TerminalModal() {
 
             <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
               <div className="flex justify-between items-start flex-wrap gap-2">
-                <span className="text-secondary font-bold">2. Adaptive RAG Assessment Engine</span>
+                <span className="text-secondary font-bold">3. Adaptive RAG Assessment Engine</span>
                 <a href="https://github.com/Edric2412/Q-A" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
                   GitHub <ExternalLink className="w-3 h-3" />
                 </a>
@@ -159,13 +175,37 @@ export function TerminalModal() {
 
             <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
               <div className="flex justify-between items-start flex-wrap gap-2">
-                <span className="text-secondary font-bold">3. CareerCompass AI</span>
+                <span className="text-secondary font-bold">4. CareerCompass AI</span>
                 <a href="https://github.com/Edric2412/CareerCompass_AI" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
                   GitHub <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
               <p className="text-on-surface-variant mt-1 text-[11px] md:text-xs">
                 Multimodal AI career guidance tool implementing Google Search grounding, tool calling, and structured asset generation.
+              </p>
+            </div>
+
+            <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <span className="text-secondary font-bold">5. Event Report Automated Generator</span>
+                <a href="https://github.com/Edric2412/Automated-Report-Generator" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
+                  GitHub <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+              <p className="text-on-surface-variant mt-1 text-[11px] md:text-xs">
+                FastAPI and DOCX automation tool reducing university event report creation time from 1 hour to 5 minutes.
+              </p>
+            </div>
+
+            <div className="border border-primary/20 p-3 rounded bg-surface-container-low/40">
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <span className="text-secondary font-bold">6. Sign Language Detection</span>
+                <a href="https://github.com/Edric2412/Realtime-Sign-Language-Detection-and-Translation-using-YOLO-" target="_blank" rel="noreferrer" className="text-primary hover:underline inline-flex items-center gap-1 text-[11px] font-bold">
+                  GitHub <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+              <p className="text-on-surface-variant mt-1 text-[11px] md:text-xs">
+                Real-time YOLO (93%) and Mediapipe/LSTM (97%) translation platform via WebSockets and FastAPI.
               </p>
             </div>
 
